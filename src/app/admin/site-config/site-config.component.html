@@ -86,6 +86,11 @@
               </div>
             </div>
           </div>
+          <div class="md-form">
+            <i class="fa fa-google prefix grey-text"></i>
+            <input type="text" [(ngModel)]="siteConfig.eventMotto" name="eventMotto" #eventMotto="ngModel" id="eventMotto" class="form-control" required>
+            <label for="eventMotto" [class.active]="siteConfig.eventMotto && siteConfig.eventMotto.length > 0">Event Motto: <em>(ex. Dia de los DevFest)</em>&nbsp;<small>(required)</small></label>
+          </div>
           <div class="md-form" *ngIf="siteConfig.eventType === 'Other'">
             <i class="fa fa-info-circle prefix grey-text"></i>
             <textarea mdbActive type="text" id="eventDescription" class="md-textarea" style="height: 100px" [(ngModel)]="siteConfig.eventDescription"

@@ -38,6 +38,7 @@ export class SiteConfigService {
 
             eventType: siteConfig.eventType ? siteConfig.eventType : 'DevFest',
             eventName: siteConfig.eventName,
+            eventMotto: siteConfig.eventMotto,
             eventDescription: siteConfig.eventDescription ? siteConfig.eventDescription : null,
             eventDate: siteConfig.eventDate,
             eventEmail: siteConfig.eventEmail,
@@ -70,6 +71,7 @@ export class SiteConfigService {
 
         eventType: siteConfig.eventType ? siteConfig.eventType : 'DevFest',
         eventName: siteConfig.eventName,
+        eventMotto: siteConfig.eventMotto,
         eventDescription: siteConfig.eventDescription ? siteConfig.eventDescription : null,
         eventDate: siteConfig.eventDate,
         eventEmail: siteConfig.eventEmail,
