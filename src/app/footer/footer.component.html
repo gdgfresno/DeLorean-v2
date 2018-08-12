@@ -36,7 +36,7 @@
         <ul>
           <li><a href="mailto:{{ config?.eventEmail }}" target="_blank" rel="noopener">{{ config?.eventEmail }}</a></li>
           <li *ngIf="config?.eventTwitter"><a href="https://twitter.com/intent/tweet?text=@{{ config?.eventTwitter }}" target="_blank" rel="noopener">@{{ config?.eventTwitter }}</a></li>
-          <li *ngIf="config?.twitterLink"><a href="https://twitter.com/intent/tweet?text=@{{ config?.twitterLink }}" target="_blank" rel="noopener">@{{ config?.twitterLink }}</a></li>
+          <li *ngIf="config?.twitterLink && config?.twitterLink !== config?.eventTwitter"><a href="https://twitter.com/intent/tweet?text=@{{ config?.twitterLink }}" target="_blank" rel="noopener">@{{ config?.twitterLink }}</a></li>
         </ul>
       </div>
       <hr class="w-100 clearfix d-sm-none">
