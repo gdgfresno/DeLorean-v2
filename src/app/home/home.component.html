@@ -7,15 +7,15 @@
     <div class="full-bg-img flex-center">
       <div class="container text-center">
         <h1 class="h1-responsive font-weight-bold">{{ config?.eventName }}</h1>
-        <p *ngIf="config?.eventMotto" class="lead mt-4 mb-5">
+        <h2 *ngIf="config?.eventMotto" class="font-weight-bold">
           {{ config?.eventMotto }}
-        </p>
+        </h2>
         <p class="lead mt-4 mb-5">
           {{ config?.eventDate | date:'fullDate' }}<br/>
           <strong>@&nbsp;{{ config?.venueName }}</strong>
         </p>
         <p class="lead mt-4 mb-5">
-          A 100% community organized developer conference with industry experts presenting on exciting topics!
+          The largest tech conference in the Central Valley!
         </p>
         <a target="_blank" rel="noopener" [href]="config?.ticketURL" class="btn btn-primary btn-lg" rel="nofollow">Reserve Your Seat</a>
         <a *ngIf="config?.speakerURL" target="_blank" rel="noopener" [href]="config?.speakerURL" class="btn btn-default btn-lg" rel="nofollow">Become A Speaker</a>
