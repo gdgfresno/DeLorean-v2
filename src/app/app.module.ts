@@ -10,8 +10,8 @@ import { SectionService } from './sessions/shared/section.service';
 import { SessionService } from './sessions/shared/session.service';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AuthService } from './services/auth/auth.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { BrowserModule, Title } from '@angular/platform-browser';
+import { NgModule, NO_ERRORS_SCHEMA, APP_INITIALIZER } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -55,6 +55,42 @@ import { SurveysComponent } from './admin/surveys/surveys.component';
 import { KeysPipe } from './pipes/keys.pipe';
 import { CocComponent } from './coc/coc.component';
 
+import {
+    L10nConfig,
+    L10nLoader,
+    LocalizationModule,
+    LocaleValidationModule,
+    StorageStrategy,
+    ProviderType
+} from 'angular-l10n';
+
+const l10nConfig: L10nConfig = {
+    locale: {
+        languages: [
+            { code: 'en', dir: 'ltr' },
+            { code: 'es', dir: 'ltr' }
+        ],
+        defaultLocale: { languageCode: 'en', countryCode: 'US', numberingSystem: 'latn' },
+        currency: 'USD',
+        storage: StorageStrategy.Cookie,
+        cookieExpiration: 30
+    },
+    translation: {
+        providers: [
+            { type: ProviderType.Static, prefix: '/assets/locale-' }
+        ],
+        caching: true,
+        composedKeySeparator: '.',
+        missingValue: 'No key',
+        i18nPlural: true
+    }
+};
+
+// Advanced initialization.
+export function initL10n(l10nLoader: L10nLoader): Function {
+    return () => l10nLoader.load();
+}
+
 @NgModule({
   schemas: [ NO_ERRORS_SCHEMA ],
   declarations: [
@@ -96,9 +132,12 @@ import { CocComponent } from './coc/coc.component';
     AngularFireAuthModule,
     AgmCoreModule.forRoot({ apiKey: firebaseConfig.mapsKey }),
     MDBBootstrapModule.forRoot(),
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    LocalizationModule.forRoot(l10nConfig),
+    LocaleValidationModule.forRoot()
   ],
   providers: [
+    Title,
     SiteConfigService,
     AuthService,
     AuthGuard,
@@ -111,7 +150,13 @@ import { CocComponent } from './coc/coc.component';
     GeocoderApiService,
     TicketService,
     ScheduleService,
-    AppCustomPreloader
+    AppCustomPreloader,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initL10n,
+      deps: [L10nLoader],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

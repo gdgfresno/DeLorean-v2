@@ -54,6 +54,9 @@
             "browserTarget": "de-lorean:build"
           },
           "configurations": {
+            "hmr": {
+              "browserTarget": "de-lorean:build:hmr"
+            },
             "production": {
               "browserTarget": "de-lorean:build:production"
             }
