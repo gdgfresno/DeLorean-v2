@@ -71,10 +71,8 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe((event) => {
         // dynamically set page titles
         let pageTitle = this.translation.translate('App.Title');
-        console.log('page title 1: ' + pageTitle);
         if (event['title']) {
           pageTitle += ' :: ' + event['title'];
-          console.log('page title 2: ' + pageTitle);
         }
         this.title.setTitle(pageTitle);
         // auto scroll to top on navigation
@@ -85,9 +83,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription = this.translation.translationChanged().subscribe(
       () => {
         let pageTitle = this.title.getTitle();
-        console.log('page title: ' + pageTitle);
         let appTitle = this.translation.translate('App.Title');
-        console.log('app title: ' + appTitle);
         if (pageTitle.indexOf(' :: ') >= 0) {
           let titleParts = pageTitle.split(' :: ');
           pageTitle = appTitle + ' :: ' + titleParts[1];
