@@ -24,19 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
   siteConfig: FirebaseObjectObservable<SiteConfig>;
   eventName: string;
 
-  countryMenuItems: any[] = [
-    { text: 'United States', language: 'en', country: 'US', currency: 'USD', numberingSystem: 'latn' },
-    { text: 'Spanish', language: 'es', country: 'MX', currency: 'USD', numberingSystem: 'latn' },
-  ];
-
-  get currentCountry(): string {
-    return this.locale.getCurrentCountry();
-  }
-
-  get currentNumberingSystem(): string {
-    return this.locale.getCurrentNumberingSystem();
-  }
-
   dir: Direction;
 
   subscription: Subscription;
@@ -104,10 +91,5 @@ export class AppComponent implements OnInit, OnDestroy {
 
   getLanguageDirection(language?: string): Direction {
     return this.locale.getLanguageDirection(language) as Direction;
-  }
-
-  selectLocale(language: string, country: string, currency: string, numberingSystem: string): void {
-    this.locale.setDefaultLocale(language, country, '', numberingSystem);
-    this.locale.setCurrentCurrency(currency);
   }
 }
