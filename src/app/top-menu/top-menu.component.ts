@@ -22,7 +22,7 @@ export class TopMenuComponent implements OnInit {
 
   countryMenuItems: any[] = [
     { text: 'English', language: 'en', country: 'US', currency: 'USD', numberingSystem: 'latn' },
-    { text: 'Spanish', language: 'es', country: 'MX', currency: 'USD', numberingSystem: 'latn' }
+    { text: 'Español', language: 'es', country: 'MX', currency: 'USD', numberingSystem: 'latn' }
   ];
 
   constructor(

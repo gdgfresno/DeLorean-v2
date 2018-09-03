@@ -1,5 +1,18 @@
 {
-    "App": {
-        "Title": "Dia de los Dev Fest"
-    }
+  "App": {
+    "Title": "Valley Dev Fest 2018"
+  },
+  "Menu": {
+    "Login": "Iniciar sesión",
+    "Language": "Idioma",
+    "Home": "Casa",
+    "Account": "Cuenta",
+    "Logout": "Cerrar sesión",
+    "Schedule": "Programar",
+    "Speakers": "Altavoces",
+    "MySchedule": "Mi horario",
+    "MyProfile": "Mi perfil",
+    "Sponsors": "Patrocinadores",
+    "Register": "Registro"
+  }
 }

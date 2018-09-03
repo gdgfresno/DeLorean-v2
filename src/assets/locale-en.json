@@ -1,6 +1,46 @@
 {
     "App": {
         "Title": "Valley Dev Fest 2018"
+    },
+    "Menu": {
+        "Home": "Home",
+        "Language": "Language",
+        "Speakers": "Speakers",
+        "Schedule": "Schedule",
+        "Sponsors": "Sponsors",
+        "Register": "Register",
+        "Login": "Login",
+        "Account": "Account",
+        "MyProfile": "My Profile",
+        "MySchedule": "My Schedule",
+        "Logout": "Logout"
+    },
+    "Home": {
+        "ConferenceShort": "The largest tech conference in the Central Valley!",
+        "ReserveYourSeat": "Reserve Your Seat",
+        "BecomeASpeaker": "Become A Speaker",
+        "About": "About",
+        "DevfestPara1": "are large, community-run developer events happening around the globe focused on community building and learning about Google’s technologies. Each DevFest is carefully crafted for you by your local GDG community to bring in awesome speakers, great topics, and lots fun! While no two events will be exactly alike, each GDG DevFest will, at its core, be powered by a shared belief that when developers come together to exchange ideas, amazing things can happen!",
+        "DevfestPara2": "is a 100% community organized full-day developer conference featuring awesome world-class speakers from technology leaders within the community as well as Google product team developers.",
+        "IWD": "International Women's Day",
+        "IWDPara1": "(IWD) is marked on March 8th every year. In different regions around the globe, the focus of celebrations ranges from general respect and appreciation for women to a celebration of women's economic, political, and social achievements. Each IWD will be tailored to local communities of women in technology. Summits and meetups around the world may feature hands-on coding workshops, inspiring speakers, and networking opportunities.",
+        "IWDPara2": "is a 100% community organized event that aims to provide visibility, community, and resources for women in technology. Our event is designed to promote an environment of inclusivity for women in tech, as well as celebrate women innovators and leaders in the industry.",
+        "FollowUs": "Follow us on social media",
+        "FeaturedSpeakers": "Featured Speakers",
+        "TheVenue": "The Venue",
+        "Location": "Location",
+        "ViewGMaps": "View on Google Maps",
+        "CodeOfConduct": "Code of Conduct",
+        "COCHeader": "Be nice. Be respectful. Be collaborative.",
+        "COCPara1": "is dedicated to a harassment-free conference experience for everyone.",
+        "COCPara2": "Before attending, please review the",
+        "COCPara3": "This Code of Conduct applies to all attendees, speakers, volunteers, vendors, and organizers at",
+        "Please": "Please",
+        "ContactUs": "contact us",
+        "AnyQuestions": "if you have any questions.",
+        "Pricing": "Pricing",
+        "Sponsors1": "We partner with some of the world's most innovative brands.",
+        "BecomeASponsor": "Become a Sponsor"
     }
 }
 
