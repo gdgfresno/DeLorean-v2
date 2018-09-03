@@ -41,6 +41,26 @@
         "Pricing": "Pricing",
         "Sponsors1": "We partner with some of the world's most innovative brands.",
         "BecomeASponsor": "Become a Sponsor"
+    },
+    "Profile": {
+        "MyProfile": "My Profile",
+        "LoggedInWith": "Logged in with"
+    },
+    "Footer": {
+        "AboutUs": "We are a technology user group that meets regularly to discuss the latest Google Technologies, Tools, SDKs, APIs, and much more.",
+        "Disclaimer": "Disclaimer",
+        "DisclaimerStatement": "is an independent group; our activities and the opinions expressed here should in no way be linked to Google, the corporation.",
+        "Links": "Links",
+        "IWDC": "International Women's Day Conference",
+        "GoogleDevelopers": "Google Developers",
+        "WTM": "Women Techmakers",
+        "Contact": "Contact",
+        "FAQ": "FAQ",
+        "GDGs": "Google Developer Groups",
+        "DevFestSeason": "GDG DevFest Season",
+        "Copyright": "Copyright",
+        "BasedOn": "Based on the",
+        "Project": "Project"
     }
 }
 
