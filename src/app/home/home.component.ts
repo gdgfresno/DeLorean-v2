@@ -10,6 +10,12 @@ import { Level } from './../sponsors/shared/level';
 import { Ticket } from './../admin/shared/ticket/ticket';
 import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { Component, OnInit } from '@angular/core';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-home',
@@ -23,13 +29,15 @@ export class HomeComponent implements OnInit {
   levels$: FirebaseListObservable<Level[]>;
   tickets$: FirebaseListObservable<Ticket[]>;
   styles: any[];
+  @Language() lang: string;
 
   constructor(
     private speakerService: SpeakerService,
     private siteConfigService: SiteConfigService,
     private sponsorService: SponsorService,
     private levelService: LevelService,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    public locale: LocaleService
   ) { }
 
   ngOnInit() {
