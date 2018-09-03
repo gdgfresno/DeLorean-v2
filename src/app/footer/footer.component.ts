@@ -2,6 +2,12 @@ import { SiteConfigService } from './../admin/shared/site-config/site-config.ser
 import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { Component, OnInit } from '@angular/core';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-footer',
@@ -11,8 +17,12 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   siteConfig: FirebaseObjectObservable<SiteConfig>;
   copyright = new Date().getFullYear();
+  @Language() lang: string;
 
-  constructor(private siteConfigService: SiteConfigService) { }
+  constructor(
+    private siteConfigService: SiteConfigService,
+    public locale: LocaleService
+  ) { }
 
   ngOnInit() {
     this.siteConfig = this.siteConfigService.getConfig();

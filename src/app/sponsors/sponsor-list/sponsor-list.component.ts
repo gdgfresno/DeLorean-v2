@@ -9,6 +9,12 @@ import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth/auth.service';
 import { SiteConfig } from './../../admin/shared/site-config/site-config';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-sponsor-list',
@@ -21,6 +27,7 @@ export class SponsorListComponent implements OnInit {
   public levels: FirebaseListObservable<Level[]>;
   level: Level = new Level();
   siteConfig: FirebaseObjectObservable<SiteConfig>;
+  @Language() lang: string;
 
   @ViewChild('levelModal') public levelModal: ModalDirective;
 
@@ -29,7 +36,8 @@ export class SponsorListComponent implements OnInit {
     private levelService: LevelService,
     private authService: AuthService,
     private router: Router,
-    private siteConfigService: SiteConfigService
+    private siteConfigService: SiteConfigService,
+    public locale: LocaleService
   ) { }
 
   ngOnInit() {

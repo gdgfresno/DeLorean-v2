@@ -4,7 +4,7 @@
 <div class="container">
   <!--Section: Profile-->
   <section class="section">
-    <h1 class="section-heading">My Profile</h1>
+    <h1 class="section-heading">{{ 'Profile.MyProfile' | translate:lang }}</h1>
     <div class="author-box" *ngIf="profile | async as profile">
       <div class="row">
         <div class="col-xs-12 col-sm-2">
@@ -16,7 +16,7 @@
           </h3>
           <p>
             {{ profile?.email }}<br/>
-            <small>Logged in with: {{ profile?.provider }}</small>
+            <small>{{ 'Profile.LoggedInWith' | translate:lang }}: {{ profile?.provider }}</small>
           </p>
         </div>
       </div>

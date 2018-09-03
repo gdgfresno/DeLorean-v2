@@ -9,6 +9,12 @@ import { AuthService } from './../../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Session } from '../../sessions/shared/session';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-session-detail',
@@ -21,6 +27,7 @@ export class SessionDetailComponent implements OnInit {
   siteConfig: FirebaseObjectObservable<SiteConfig>;
   eventName: string;
   mySchedule: FirebaseObjectObservable<any>;
+  @Language() lang: string;
 
   constructor(
     private router: Router,
@@ -30,7 +37,8 @@ export class SessionDetailComponent implements OnInit {
     private speakerService: SpeakerService,
     private title: Title,
     private siteConfigService: SiteConfigService,
-    private scheduleService: ScheduleService
+    private scheduleService: ScheduleService,
+    public locale: LocaleService
   ) { }
 
   ngOnInit() {

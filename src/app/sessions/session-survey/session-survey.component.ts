@@ -10,6 +10,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Speaker } from '../../speakers/shared/speaker';
 import { Session } from '../../sessions/shared/session';
 import { Survey } from './../shared/survey';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-session-survey',
@@ -22,6 +28,7 @@ export class SessionSurveyComponent implements OnInit {
   siteConfig: FirebaseObjectObservable<SiteConfig>;
   eventName: string;
   survey: Survey = new Survey();
+  @Language() lang: string;
 
   constructor(
     private router: Router,
@@ -30,7 +37,8 @@ export class SessionSurveyComponent implements OnInit {
     private sessionService: SessionService,
     private speakerService: SpeakerService,
     private title: Title,
-    private siteConfigService: SiteConfigService
+    private siteConfigService: SiteConfigService,
+    public locale: LocaleService
   ) { }
 
   ngOnInit() {

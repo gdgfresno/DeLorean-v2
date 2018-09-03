@@ -8,6 +8,12 @@ import { Section } from './../shared/section';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-session-list',
@@ -19,6 +25,7 @@ export class SessionListComponent implements OnInit {
   public sessions: FirebaseListObservable<Session[]>;
   public sections: FirebaseListObservable<Section[]>;
   section: Section = new Section();
+  @Language() lang: string;
 
   @ViewChild('sectionModal') public sectionModal: ModalDirective;
 
@@ -27,7 +34,8 @@ export class SessionListComponent implements OnInit {
     private sectionService: SectionService,
     private speakerService: SpeakerService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public locale: LocaleService
   ) { }
 
   ngOnInit() {

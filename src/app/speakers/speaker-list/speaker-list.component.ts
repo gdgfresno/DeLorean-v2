@@ -5,6 +5,12 @@ import { Speaker } from './../shared/speaker';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-speaker-list',
@@ -16,11 +22,13 @@ export class SpeakerListComponent implements OnInit {
 
   public speakers: FirebaseListObservable<Speaker[]>;
   public speakerDetail: any;
+  @Language() lang: string;
 
   constructor(
     private speakerService: SpeakerService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public locale: LocaleService
   ) { }
 
   ngOnInit() {

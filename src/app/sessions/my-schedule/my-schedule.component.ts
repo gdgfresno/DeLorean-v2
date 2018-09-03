@@ -8,6 +8,12 @@ import { Session } from './../shared/session';
 import { Section } from './../shared/section';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit } from '@angular/core';
+import {
+    LocaleService,
+    TranslationService,
+    Language,
+    DefaultLocale
+} from 'angular-l10n';
 
 @Component({
   selector: 'app-my-schedule',
@@ -18,6 +24,7 @@ export class MyScheduleComponent implements OnInit {
   public sessions$: FirebaseListObservable<Session[]>;
   public sections$: FirebaseListObservable<Section[]>;
   public mySessions$: FirebaseListObservable<any>;
+  @Language() lang: string;
 
   constructor(
     private sessionService: SessionService,
@@ -25,7 +32,8 @@ export class MyScheduleComponent implements OnInit {
     private scheduleService: ScheduleService,
     private speakerService: SpeakerService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public locale: LocaleService
   ) { }
 
   ngOnInit() {
