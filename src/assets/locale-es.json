@@ -1,7 +1,7 @@
 {
   "App": {
     "Title": "Valley Dev Fest 2018"
-  },
+    },
   "Menu": {
     "Login": "Iniciar sesión",
     "Language": "Idioma",
@@ -14,5 +14,32 @@
     "MyProfile": "Mi perfil",
     "Sponsors": "Patrocinadores",
     "Register": "Registro"
+  },
+  "Home": {
+    "FeaturedSpeakers": "Oradores destacados",
+    "CodeOfConduct": "Código de Conducta",
+    "DevfestPara2": "es una conferencia de desarrolladores de 100 días organizada por la comunidad, que presenta destacados oradores de primer nivel de líderes tecnológicos de la comunidad y desarrolladores de equipos de productos de Google.",
+    "AnyQuestions": "Si tienes alguna pregunta.",
+    "ReserveYourSeat": "Reserve su asiento",
+    "DevfestPara1": "son grandes eventos de desarrollo dirigidos por la comunidad que se están llevando a cabo en todo el mundo y se centran en la construcción de comunidades y el conocimiento de las tecnologías de Google. ¡Cada DevFest está cuidadosamente diseñado para ti por tu comunidad local de GDG para traer increíbles oradores, excelentes temas y mucha diversión! Si bien no hay dos eventos exactamente iguales, cada GDG DevFest, en su núcleo, estará impulsado por la creencia compartida de que cuando los desarrolladores se unen para intercambiar ideas, ¡pueden suceder cosas increíbles!",
+    "COCPara1": "está dedicado a una experiencia de conferencia libre de acoso para todos.",
+    "IWDPara2": "es un evento 100% organizado por la comunidad que tiene como objetivo proporcionar visibilidad, comunidad y recursos para las mujeres en la tecnología. Nuestro evento está diseñado para promover un ambiente de inclusión para las mujeres en la tecnología, así como para celebrar a las mujeres innovadoras y líderes en la industria.",
+    "BecomeASponsor": "Conviértase en un patrocinador",
+    "ConferenceShort": "¡La conferencia de tecnología más grande en el Valle Central!",
+    "About": "Acerca de",
+    "COCPara2": "Antes de asistir, revise el",
+    "COCHeader": "Se bueno. Se respetuoso. Sé colaborativo.",
+    "COCPara3": "Este Código de Conducta se aplica a todos los asistentes, oradores, voluntarios, proveedores y organizadores en",
+    "TheVenue": "El lugar",
+    "Sponsors1": "Nos asociamos con algunas de las marcas más innovadoras del mundo.",
+    "IWDPara1": "(IWD) se marca el 8 de marzo de cada año. En diferentes regiones del mundo, el foco de las celebraciones va desde el respeto general y el aprecio por las mujeres hasta la celebración de los logros económicos, políticos y sociales de las mujeres. Cada IWD se adaptará a las comunidades locales de mujeres en tecnología. Las cumbres y reuniones de todo el mundo pueden contar con talleres prácticos de codificación, oradores inspiradores y oportunidades para establecer contactos.",
+    "Please": "Por favor",
+    "BecomeASpeaker": "Convertirse en orador",
+    "Pricing": "Precios",
+    "ViewGMaps": "Ver en Google Maps",
+    "Location": "Ubicación",
+    "ContactUs": "Contáctenos",
+    "IWD": "Día Internacional de la Mujer",
+    "FollowUs": "Síguenos en las redes sociales"
   }
 }
