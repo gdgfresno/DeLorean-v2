@@ -41,5 +41,68 @@
     "ContactUs": "Contáctenos",
     "IWD": "Día Internacional de la Mujer",
     "FollowUs": "Síguenos en las redes sociales"
+  },
+  "Profile": {
+    "MyProfile": "Mi perfil",
+    "LoggedInWith": "Conectado con"
+  },
+  "Footer": {
+    "IWDC": "Conferencia Internacional del Día de la Mujer",
+    "FAQ": "Preguntas más frecuentes",
+    "Contact": "Contacto",
+    "WTM": "Mujeres Techmakers",
+    "AboutUs": "Somos un grupo de usuarios de tecnología que se reúne regularmente para analizar las últimas tecnologías, herramientas, SDK, API y mucho más de Google.",
+    "DisclaimerStatement": "es un grupo independiente; nuestras actividades y las opiniones expresadas aquí no deben vincularse de ninguna manera con Google, la corporación.",
+    "Project": "Proyecto",
+    "GDGs": "Grupos de desarrolladores de Google",
+    "BasedOn": "Basado en",
+    "Links": "Campo de golf",
+    "GoogleDevelopers": "Desarrolladores de Google",
+    "DevFestSeason": "Temporada de GDG DevFest",
+    "Disclaimer": "Renuncia",
+    "Copyright": "Derechos de autor"
+  },
+  "Sponsors": {
+    "Motto": "Nos asociamos con algunas de las marcas más innovadoras del mundo.",
+    "OurSponsors": "Nuestros patrocinadores"
+  },
+  "Speakers": {
+    "StayTuned": "¡Manténganse al tanto! ¡Los oradores se agregarán pronto!",
+    "OurSpeakers": "Nuestros increíbles oradores"
+  },
+  "Schedule": {
+    "Room": "Habitación",
+    "SmallInstruction": "Inicie sesión para agregar esto a su agenda personal, o para proporcionar comentarios una vez que finalice la sesión.",
+    "Content": "El contenido de esta sesión fue relevante y útil",
+    "MyStayTuned": "¡Manténganse al tanto! Una vez que se han agregado las sesiones, ¡puede crear su propio horario y verlo aquí!",
+    "StronglyDisagree": "Muy en desacuerdo",
+    "BackToSchedule": "Volver al cronograma",
+    "GiveSessionFeedback": "Dar opinión de la sesión",
+    "Communication": "El presentador comunicó efectivamente el contenido de la presentación",
+    "AddSchedule2": "y agrega algunos!",
+    "MySchedule": "Mi horario",
+    "Difficulty": "El nivel de dificultad del contenido fue apropiado y como se esperaba",
+    "StronglyAgree": "Totalmente de acuerdo",
+    "SubmitSurvey": "Enviar Encuesta",
+    "AddSchedule1": "¡Aún no ha agregado ninguna sesión! Regresa a la",
+    "StayTuned": "¡Manténganse al tanto! ¡Las sesiones se agregarán pronto!",
+    "AddToMySchedule": "Agregar a mi horario",
+    "Speaker": "Altavoz",
+    "OtherFeedback": "¿Qué otros comentarios tienes para este orador?",
+    "ViewMySchedule": "Ver mi horario",
+    "OtherComments": "Otros comentarios",
+    "Speech": "El presentador habló claramente y se presentó bien",
+    "RemoveFromMySchedule": "Eliminar de mi horario",
+    "Worthwhile": "Valió la pena asistir a esta presentación",
+    "SpeakerEvaluation": "Evaluación de altavoces",
+    "ViewFullSchedule": "Ver el horario completo",
+    "Level": "Nivel",
+    "WellOrganized": "El presentador estaba bien organizado",
+    "Tag": "Etiqueta",
+    "OurSchedule": "Nuestro horario",
+    "Knowledgeable": "El presentador estaba bien informado sobre el tema",
+    "Useful": "Utilizaré este conocimiento que recibí en esta presentación en el futuro cercano",
+    "BackToSession": "Volver a la sesión",
+    "PrintSchedule": "Imprimir horario"
   }
 }
