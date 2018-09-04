@@ -4,7 +4,7 @@
 <div class="container">
   <!--Section: Speakers-->
   <section class="section team-section pb-3">
-    <h1 class="section-heading">Our Amazing Speakers</h1>
+    <h1 class="section-heading">{{ 'Speakers.OurSpeakers' | translate:lang }}</h1>
     <div class="text-center" *ngIf="isLoggedIn() && isAdmin()">
       <button type="button" class="btn btn-success" routerLink="/speakers/new">Create Speaker</button>
     </div>
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div class="text-center" *ngIf="(speakers | async)?.length === 0">
-      <h5>Stay tuned! Speakers are being added soon!</h5>
+      <h5>{{ 'Speakers.StayTuned' | translate:lang }}</h5>
     </div>
   </section>
   <!--Section: Speakers-->

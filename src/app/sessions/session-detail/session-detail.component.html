@@ -5,7 +5,7 @@
   <!--Section: Session-->
   <section class="section">
     <div style="padding: 40px 0;">
-      <a href="" routerLink="/sessions" title="Back to schedule"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to schedule</a>
+      <a href="" routerLink="/sessions" title="{{ 'Schedule.BackToSchedule' | translate:lang }}"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> {{ 'Schedule.BackToSchedule' | translate:lang }}</a>
     </div>
     <div class="text-center" *ngIf="isLoggedIn() && isAdmin()">
       <button type="button" class="btn btn-primary" (click)="editDetails(session)">Edit Session</button>
@@ -19,9 +19,9 @@
           <!-- Post data -->
           <h2 class="text-center" style="padding-bottom: 20px;" [innerHTML]="session?.title"></h2>
           <h6 class="text-muted" style="padding-bottom: 20px;">
-            <span *ngIf="session?.room"><strong>Room:</strong>&nbsp;<span [innerHTML]="session?.room"></span><br></span>
-            <span *ngIf="session?.level"><strong>Level:</strong>&nbsp;<span [innerHTML]="session?.level"></span><br></span>
-            <span *ngIf="session?.tag"><strong>Tag:</strong>&nbsp;<span [innerHTML]="session?.tag"></span></span>
+            <span *ngIf="session?.room"><strong>{{ 'Schedule.Room' | translate:lang }}:</strong>&nbsp;<span [innerHTML]="session?.room"></span><br></span>
+            <span *ngIf="session?.level"><strong>{{ 'Schedule.Level' | translate:lang }}:</strong>&nbsp;<span [innerHTML]="session?.level"></span><br></span>
+            <span *ngIf="session?.tag"><strong>{{ 'Schedule.Tag' | translate:lang }}:</strong>&nbsp;<span [innerHTML]="session?.tag"></span></span>
           </h6>
         </div>
         <!--/.Post data-->
@@ -32,14 +32,14 @@
         <!--/Post text-->
 
         <div class="text-center" *ngIf="isLoggedIn() && mySchedule | async as schedule" style="margin-top: 35px;">
-          <button *ngIf="!schedule.value" (click)="addToSchedule()" type="button" class="btn btn-outline-primary" title="Add to My Schedule"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Add to My Schedule</button>
-          <button *ngIf="schedule.value" (click)="removeFromSchedule()" type="button" class="btn btn-outline-primary" title="Remove from My Schedule"><i class="fa fa-calendar-times-o" aria-hidden="true"></i> Remove from My Schedule</button>
-          <button (click)="openFeedback(session)" type="button" class="btn btn-primary" title="Give Session Feedback"><i class="fa fa-commenting" aria-hidden="true"></i> Give Session Feedback</button>
+          <button *ngIf="!schedule.value" (click)="addToSchedule()" type="button" class="btn btn-outline-primary" title="{{ 'Schedule.AddToMySchedule' | translate:lang }}"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> {{ 'Schedule.AddToMySchedule' | translate:lang }}</button>
+          <button *ngIf="schedule.value" (click)="removeFromSchedule()" type="button" class="btn btn-outline-primary" title="{{ 'Schedule.RemoveFromMySchedule' | translate:lang }}"><i class="fa fa-calendar-times-o" aria-hidden="true"></i> {{ 'Schedule.RemoveFromMySchedule' | translate:lang }}</button>
+          <button (click)="openFeedback(session)" type="button" class="btn btn-primary" title="{{ 'Schedule.GiveSessionFeedback' | translate:lang }}"><i class="fa fa-commenting" aria-hidden="true"></i> {{ 'Schedule.GiveSessionFeedback' | translate:lang }}</button>
         </div>
 
         <div class="text-center" *ngIf="!isLoggedIn()" style="margin-top: 35px;">
-          <small>Login to add this to your personal schedule,<br/>or to provide feedback after the session ends.</small><br/>
-          <button (click)="userLogin()" type="button" class="btn btn-primary" title="Login">Login</button>
+          <small>{{ 'Schedule.SmallInstruction' | translate:lang }}</small><br/>
+          <button (click)="userLogin()" type="button" class="btn btn-primary" title="{{ 'Menu.Login' | translate:lang }}">{{ 'Menu.Login' | translate:lang }}</button>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
 
   <!--Section heading-->
   <div class="divider-new" *ngIf="session?.speakers">
-    <h2 class="h2-responsive">Speaker<span *ngIf="profiles.length > 1">s</span></h2>
+    <h2 class="h2-responsive">{{ 'Schedule.Speaker' | translate:lang }}<span *ngIf="profiles.length > 1">s</span></h2>
   </div>
 
   <!--Section: Speaker-->
@@ -92,7 +92,7 @@
     </div>
     <!--/.Author box-->
     <div style="padding: 40px 0;">
-      <a href="" routerLink="/sessions" title="Back to schedule"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to schedule</a>
+      <a href="" routerLink="/sessions" title="{{ 'Schedule.BackToSchedule' | translate:lang }}"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> {{ 'Schedule.BackToSchedule' | translate:lang }}</a>
     </div>
   </section>
   <!--/.Section: Speaker-->

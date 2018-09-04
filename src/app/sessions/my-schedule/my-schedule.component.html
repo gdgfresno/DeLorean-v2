@@ -6,11 +6,11 @@
   <section class="section">
     <div class="d-print-none">
       <div class="pull-right" style="margin-top: -45px;">
-        <a href="javascript:window.print();" title="Print Schedule"><i class="fa fa-print" aria-hidden="true"></i> Print Schedule</a>
+        <a href="javascript:window.print();" title="{{ 'Schedule.PrintSchedule' | translate:lang }}"><i class="fa fa-print" aria-hidden="true"></i> {{ 'Schedule.PrintSchedule' | translate:lang }}</a>
       </div>
-      <h1 class="section-heading">My Schedule</h1>
+      <h1 class="section-heading">{{ 'Schedule.MySchedule' | translate:lang }}</h1>
       <div class="text-center">
-        <button type="button" class="btn btn-primary" routerLink="/sessions">View Full Schedule</button>
+        <button type="button" class="btn btn-primary" routerLink="/sessions">{{ 'Schedule.ViewMySchedule' | translate:lang }}</button>
       </div>
     </div>
     <div *ngIf="(mySessions$ | async)?.length !== 0 && mySessions$ | async as mySessions" class="table-responsive">
@@ -40,10 +40,10 @@
       </table>
     </div>
     <div class="text-center" *ngIf="(sessions$ | async)?.length !== 0 && (mySessions$ | async)?.length === 0">
-      <h5>You haven't added any sessions yet! Go back to the <a routerLink="/sessions">Schedule</a> and add some!</h5>
+      <h5>{{ 'Schedule.AddSchedule1' | translate:lang }} <a routerLink="/sessions">{{ 'Menu.Schedule' | translate:lang }}</a> {{ 'Schedule.AddSchedule2' | translate:lang }}</h5>
     </div>
     <div class="text-center" *ngIf="(sessions$ | async)?.length === 0">
-      <h5>Stay tuned! Once sessions have been added, you can create your own schedule and view it here!</h5>
+      <h5>{{ 'Schedule.MyStayTuned' | translate:lang }}</h5>
     </div>
   </section>
   <!--Section: Schedule-->

@@ -61,6 +61,49 @@
         "Copyright": "Copyright",
         "BasedOn": "Based on the",
         "Project": "Project"
+    },
+    "Sponsors": {
+        "OurSponsors": "Our Sponsors",
+        "Motto": "We partner with some of the world's most innovative brands."
+    },
+    "Speakers": {
+        "OurSpeakers": "Our Amazing Speakers",
+        "StayTuned": "Stay tuned! Speakers are being added soon!"
+    },
+    "Schedule": {
+        "OurSchedule": "Our Schedule",
+        "PrintSchedule": "Print Schedule",
+        "ViewMySchedule": "View My Schedule",
+        "StayTuned": "Stay tuned! Sessions will be added soon!",
+        "MySchedule": "My Schedule",
+        "ViewFullSchedule": "View Full Schedule",
+        "AddSchedule1": "You haven't added any sessions yet! Go back to the",
+        "AddSchedule2": "and add some!",
+        "MyStayTuned": "Stay tuned! Once sessions have been added, you can create your own schedule and view it here!",
+        "BackToSchedule": "Back to schedule",
+        "Room": "Room",
+        "Level": "Level",
+        "Tag": "Tag",
+        "AddToMySchedule": "Add to My Schedule",
+        "RemoveFromMySchedule": "Remove from  My Schedule",
+        "GiveSessionFeedback": "Give Session Feedback",
+        "SmallInstruction": "Login to add this to your personal schedule, or to provide feedback after the session ends.",
+        "BackToSession": "Back to Session",
+        "SpeakerEvaluation": "Speaker Evaluation",
+        "Communication": "The presenter effectively communicated the content of the presentation",
+        "StronglyDisagree": "Strongly Disagree",
+        "StronglyAgree": "Strongly Agree",
+        "Knowledgeable": "The presenter was knowledgeable about the subject matter",
+        "WellOrganized": "The presenter was well organized",
+        "Speech": "The presenter spoke clearly and presented well",
+        "Content": "The content in this session was relevant and useful",
+        "Worthwhile": "It was worthwhile to attend this presentation",
+        "Difficulty": "The content difficulty level was appropriate and as expected",
+        "Useful": "I will use this knowledge I received in this presentation in the near future",
+        "OtherComments": "Other Comments",
+        "OtherFeedback": "What other feedback do you have for this speaker?",
+        "SubmitSurvey": "Submit Survey",
+        "Speaker": "Speaker"
     }
 }
 

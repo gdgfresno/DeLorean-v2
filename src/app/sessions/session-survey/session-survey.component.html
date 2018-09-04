@@ -5,7 +5,7 @@
   <!--Section: Session-->
   <section class="section">
     <div style="padding: 40px 0;">
-      <a href="" routerLink="/sessions/{{ session.$key }}" title="Back to Session"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to Session</a>
+      <a href="" routerLink="/sessions/{{ session.$key }}" title="{{ 'Schedule.BackToSession' | translate:lang }}"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> {{ 'Schedule.BackToSession' | translate:lang }}</a>
     </div>
     <!--First row-->
     <div class="row">
@@ -30,14 +30,14 @@
           <table style="width: 100%;">
             <tbody>
               <thead>
-                <th><h5>Speaker Evaluation</h5></th>
+                <th><h5>{{ 'Schedule.SpeakerEvaluation' | translate:lang }}</h5></th>
               </thead>
               <tr>
                 <table style="width: 100%;">
                   <tbody>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>The presenter effectively communicated the content of the presentation <small>*</small></strong>
+                        <strong>{{ 'Schedule.Communication' | translate:lang }} <small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -52,7 +52,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group1" id="radio1" type="radio" value="1" required [(ngModel)]="survey.group1">
                       </td>
@@ -68,11 +68,11 @@
                       <td>
                         <input name="group1" id="radio5" type="radio" value="5" required [(ngModel)]="survey.group1">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>The presenter was knowledgeable about the subject matter <small>*</small></strong>
+                        <strong>{{ 'Schedule.Knowledgeable' | translate:lang }} <small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -87,7 +87,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group2" id="radio6" type="radio" value="1" required [(ngModel)]="survey.group2">
                       </td>
@@ -103,11 +103,11 @@
                       <td>
                         <input name="group2" id="radio10" type="radio" value="5" required [(ngModel)]="survey.group2">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>The presenter was well organized <small>*</small></strong>
+                        <strong>{{ 'Schedule.WellOrganized' | translate:lang }} <small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -122,7 +122,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group3" id="radio11" type="radio" value="1" required [(ngModel)]="survey.group3">
                       </td>
@@ -138,11 +138,11 @@
                       <td>
                         <input name="group3" id="radio15" type="radio" value="5" required [(ngModel)]="survey.group3">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>The presenter spoke clearly and presented well <small>*</small></strong>
+                        <strong>{{ 'Schedule.Speech' | translate:lang }} <small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -157,7 +157,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group4" id="radio16" type="radio" value="1" required [(ngModel)]="survey.group4">
                       </td>
@@ -173,7 +173,7 @@
                       <td>
                         <input name="group4" id="radio20" type="radio" value="5" required [(ngModel)]="survey.group4">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -192,7 +192,7 @@
                   <tbody>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>The content in this session was relevant and useful <small>*</small></strong>
+                        <strong>{{ 'Schedule.Content' | translate:lang }} <small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -207,7 +207,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group5" id="radio21" type="radio" value="1" required [(ngModel)]="survey.group5">
                       </td>
@@ -223,11 +223,11 @@
                       <td>
                         <input name="group5" id="radio25" type="radio" value="5" required [(ngModel)]="survey.group5">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>It was worthwhile to attend this presentation <small>*</small></strong>
+                        <strong>{{ 'Schedule.Worthwhile' | translate:lang }} <small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -242,7 +242,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group6" id="radio26" type="radio" value="1" required [(ngModel)]="survey.group6">
                       </td>
@@ -258,11 +258,11 @@
                       <td>
                         <input name="group6" id="radio30" type="radio" value="5" required [(ngModel)]="survey.group6">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>The content difficulty level was appropriate and as expected <small>*</small></strong>
+                        <strong>{{ 'Schedule.Difficulty' | translate:lang }}<small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -277,7 +277,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group7" id="radio31" type="radio" value="1" required [(ngModel)]="survey.group7">
                       </td>
@@ -293,11 +293,11 @@
                       <td>
                         <input name="group7" id="radio35" type="radio" value="5" required [(ngModel)]="survey.group7">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>I will use this knowledge I received in this presentation in the near future <small>*</small></strong>
+                        <strong>{{ 'Schedule.Useful' | translate:lang }} <small>*</small></strong>
                       </td>
                     </tr>
                     <tr>
@@ -312,7 +312,7 @@
                     </tr>
                     <tr style="background-color: #ecececa2;">
                       <td style="width: 10%;">&nbsp;</td>
-                      <td>Strongly Disagree</td>
+                      <td>{{ 'Schedule.StronglyDisagree' | translate:lang }}</td>
                       <td>
                         <input name="group8" id="radio16" type="radio" value="1" required [(ngModel)]="survey.group8">
                       </td>
@@ -328,7 +328,7 @@
                       <td>
                         <input name="group8" id="radio20" type="radio" value="5" required [(ngModel)]="survey.group8">
                       </td>
-                      <td>Strongly Agree</td>
+                      <td>{{ 'Schedule.StronglyAgree' | translate:lang }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -340,14 +340,14 @@
           <table style="width: 100%;">
             <tbody>
               <thead>
-                <th><h5>Other Comments</h5></th>
+                <th><h5>{{ 'Schedule.OtherComments' | translate:lang }}</h5></th>
               </thead>
               <tr>
                 <table style="width: 100%;">
                   <tbody>
                     <tr>
                       <td colspan="8" style="padding: 25px;">
-                        <strong>What other feedback do you have for this speaker?</strong>
+                        <strong>{{ 'Schedule.OtherFeedback' | translate:lang }}</strong>
                       </td>
                     </tr>
                     <tr>
@@ -364,10 +364,10 @@
     </form>
     <br><br>
     <div class="text-center">
-      <button type="button" class="btn btn-primary" [disabled]="!surveyForm.valid" (click)="saveSurvey()">Submit Survey</button>
+      <button type="button" class="btn btn-primary" [disabled]="!surveyForm.valid" (click)="saveSurvey()">{{ 'Schedule.SubmitSurvey' | translate:lang }}</button>
     </div>
     <div style="padding: 40px 0;">
-      <a href="" routerLink="/sessions/{{ session.$key }}" title="Back to Session"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to Session</a>
+      <a href="" routerLink="/sessions/{{ session.$key }}" title="{{ 'Schedule.BackToSession' | translate:lang }}"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> {{ 'Schedule.BackToSession' | translate:lang }}</a>
     </div>
   </section>
   <!--Section: Survey-->
