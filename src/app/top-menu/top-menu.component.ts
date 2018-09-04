@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
     LocaleService,
-    TranslationService,
-    Language,
-    DefaultLocale
+    Language
 } from 'angular-l10n';
 
 @Component({

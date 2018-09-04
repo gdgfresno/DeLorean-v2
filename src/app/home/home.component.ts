@@ -12,9 +12,7 @@ import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { Component, OnInit } from '@angular/core';
 import {
     LocaleService,
-    TranslationService,
-    Language,
-    DefaultLocale
+    Language
 } from 'angular-l10n';
 
 @Component({

@@ -4,9 +4,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit } from '@angular/core';
 import {
     LocaleService,
-    TranslationService,
-    Language,
-    DefaultLocale
+    Language
 } from 'angular-l10n';
 
 @Component({
