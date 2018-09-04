@@ -1,14 +1,13 @@
 import { SiteConfigService } from './admin/shared/site-config/site-config.service';
 import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { SiteConfig } from './admin/shared/site-config/site-config';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 import { mergeMap, map, filter } from 'rxjs/operators';
 
 import { Direction } from '@angular/cdk/bidi';
-import { Subscription } from 'rxjs';
 import { LocaleService, TranslationService } from 'angular-l10n';
 
 @Component({
@@ -20,18 +19,16 @@ import { LocaleService, TranslationService } from 'angular-l10n';
  * AppComponent class doesn't use decorators
  * because the view uses only directives and not the pipes to get the translation.
  */
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   siteConfig: FirebaseObjectObservable<SiteConfig>;
   eventName: string;
 
   dir: Direction;
 
-  subscription: Subscription;
-
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    public title: Title,
+    private title: Title,
     private siteConfigService: SiteConfigService,
     public locale: LocaleService,
     public translation: TranslationService
@@ -57,7 +54,10 @@ export class AppComponent implements OnInit, OnDestroy {
       mergeMap((route) => route.data))
       .subscribe((event) => {
         // dynamically set page titles
-        let pageTitle = this.translation.translate('App.Title');
+        let pageTitle = this.title.getTitle();
+        if (this.eventName) {
+          pageTitle = this.eventName;
+        }
         if (event['title']) {
           pageTitle += ' :: ' + event['title'];
         }
@@ -66,27 +66,8 @@ export class AppComponent implements OnInit, OnDestroy {
         window.scrollTo(0, 0);
       });
 
-    // When the language changes, refreshes the document title with the new translation.
-    this.subscription = this.translation.translationChanged().subscribe(
-      () => {
-        let pageTitle = this.title.getTitle();
-        let appTitle = this.translation.translate('App.Title');
-        if (pageTitle.indexOf(' :: ') >= 0) {
-          let titleParts = pageTitle.split(' :: ');
-          pageTitle = appTitle + ' :: ' + titleParts[1];
-        } else {
-          pageTitle = appTitle;
-        }
-        this.title.setTitle(pageTitle);
-      }
-    );
-
     // Initializes direction.
     this.dir = this.getLanguageDirection();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
   getLanguageDirection(language?: string): Direction {
