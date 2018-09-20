@@ -3,7 +3,7 @@ import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit } from '@angular/core';
 import {
-    LocaleService,
+    TranslationService,
     Language
 } from 'angular-l10n';
 
@@ -18,7 +18,7 @@ export class CocComponent implements OnInit {
 
   constructor(
     private siteConfigService: SiteConfigService,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {

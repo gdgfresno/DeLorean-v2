@@ -6,7 +6,6 @@ import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
 import {
-    LocaleService,
     TranslationService,
     Language,
     DefaultLocale
@@ -23,12 +22,13 @@ export class SpeakerListComponent implements OnInit {
   public speakers: FirebaseListObservable<Speaker[]>;
   public speakerDetail: any;
   @Language() lang: string;
+  @DefaultLocale() defaultLocale: string;
 
   constructor(
     private speakerService: SpeakerService,
     private authService: AuthService,
     private router: Router,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {

@@ -11,7 +11,6 @@ import { Speaker } from '../../speakers/shared/speaker';
 import { Session } from '../../sessions/shared/session';
 import { Survey } from './../shared/survey';
 import {
-    LocaleService,
     TranslationService,
     Language,
     DefaultLocale
@@ -29,6 +28,7 @@ export class SessionSurveyComponent implements OnInit {
   eventName: string;
   survey: Survey = new Survey();
   @Language() lang: string;
+  @DefaultLocale() defaultLocale: string;
 
   constructor(
     private router: Router,
@@ -38,7 +38,7 @@ export class SessionSurveyComponent implements OnInit {
     private speakerService: SpeakerService,
     private title: Title,
     private siteConfigService: SiteConfigService,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {

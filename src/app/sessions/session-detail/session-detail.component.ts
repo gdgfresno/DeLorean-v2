@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Session } from '../../sessions/shared/session';
 import {
-    LocaleService,
     TranslationService,
     Language,
     DefaultLocale
@@ -28,6 +27,7 @@ export class SessionDetailComponent implements OnInit {
   eventName: string;
   mySchedule: FirebaseObjectObservable<any>;
   @Language() lang: string;
+  @DefaultLocale() defaultLocale: string;
 
   constructor(
     private router: Router,
@@ -38,7 +38,7 @@ export class SessionDetailComponent implements OnInit {
     private title: Title,
     private siteConfigService: SiteConfigService,
     private scheduleService: ScheduleService,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {

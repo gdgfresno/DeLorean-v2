@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
     LocaleService,
+    TranslationService,
     Language
 } from 'angular-l10n';
 
@@ -27,7 +28,8 @@ export class TopMenuComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private siteConfigService: SiteConfigService,
-    public locale: LocaleService
+    public locale: LocaleService,
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {

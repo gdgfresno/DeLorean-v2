@@ -10,10 +10,8 @@ import { AuthService } from './../../services/auth/auth.service';
 import { SiteConfig } from './../../admin/shared/site-config/site-config';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
-    LocaleService,
     TranslationService,
-    Language,
-    DefaultLocale
+    Language
 } from 'angular-l10n';
 
 @Component({
@@ -37,7 +35,7 @@ export class SponsorListComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private siteConfigService: SiteConfigService,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {

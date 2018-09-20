@@ -1,7 +1,7 @@
 import { AuthService } from './../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {
-    LocaleService,
+    TranslationService,
     Language
 } from 'angular-l10n';
 
@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {

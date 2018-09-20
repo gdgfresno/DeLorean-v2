@@ -9,7 +9,6 @@ import { Section } from './../shared/section';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit } from '@angular/core';
 import {
-    LocaleService,
     TranslationService,
     Language,
     DefaultLocale
@@ -25,6 +24,7 @@ export class MyScheduleComponent implements OnInit {
   public sections$: FirebaseListObservable<Section[]>;
   public mySessions$: FirebaseListObservable<any>;
   @Language() lang: string;
+  @DefaultLocale() defaultLocale: string;
 
   constructor(
     private sessionService: SessionService,
@@ -33,7 +33,7 @@ export class MyScheduleComponent implements OnInit {
     private speakerService: SpeakerService,
     private authService: AuthService,
     private router: Router,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {
