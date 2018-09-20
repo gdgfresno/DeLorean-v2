@@ -58,7 +58,7 @@ import { CocComponent } from './coc/coc.component';
 import {
     L10nConfig,
     L10nLoader,
-    TranslationModule,
+    LocalizationModule,
     StorageStrategy,
     ProviderType
 } from 'angular-l10n';
@@ -69,7 +69,8 @@ const l10nConfig: L10nConfig = {
             { code: 'en', dir: 'ltr' },
             { code: 'es', dir: 'ltr' }
         ],
-        language: 'en',
+        defaultLocale: { languageCode: 'en', countryCode: 'US' },
+        currency: 'USD',
         storage: StorageStrategy.Cookie
     },
     translation: {
@@ -130,7 +131,7 @@ export function initL10n(l10nLoader: L10nLoader): Function {
     AgmCoreModule.forRoot({ apiKey: firebaseConfig.mapsKey }),
     MDBBootstrapModule.forRoot(),
     ScrollToModule.forRoot(),
-    TranslationModule.forRoot(l10nConfig)
+    LocalizationModule.forRoot(l10nConfig)
   ],
   providers: [
     Title,

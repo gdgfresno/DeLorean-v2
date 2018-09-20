@@ -11,7 +11,7 @@
           {{ config?.eventMotto }}
         </h2>
         <p class="lead mt-4 mb-5">
-          {{ config?.eventDate | date:'fullDate' }}<br/>
+          {{ config?.eventDate | l10nDate:defaultLocale:'fullDate' }}<br/>
           <strong>@&nbsp;{{ config?.venueName }}</strong>
         </p>
         <p class="lead mt-4 mb-5">

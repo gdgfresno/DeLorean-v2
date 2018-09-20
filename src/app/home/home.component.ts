@@ -11,8 +11,9 @@ import { Ticket } from './../admin/shared/ticket/ticket';
 import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { Component, OnInit } from '@angular/core';
 import {
-    LocaleService,
-    Language
+    TranslationService,
+    Language,
+    DefaultLocale
 } from 'angular-l10n';
 
 @Component({
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   tickets$: FirebaseListObservable<Ticket[]>;
   styles: any[];
   @Language() lang: string;
+  @DefaultLocale() defaultLocale: string;
 
   constructor(
     private speakerService: SpeakerService,
@@ -35,7 +37,7 @@ export class HomeComponent implements OnInit {
     private sponsorService: SponsorService,
     private levelService: LevelService,
     private ticketService: TicketService,
-    public locale: LocaleService
+    public translation: TranslationService
   ) { }
 
   ngOnInit() {
