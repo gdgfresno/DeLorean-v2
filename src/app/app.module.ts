@@ -53,6 +53,7 @@ import { MyScheduleComponent } from './sessions/my-schedule/my-schedule.componen
 import { SessionSurveyComponent } from './sessions/session-survey/session-survey.component';
 import { SurveysComponent } from './admin/surveys/surveys.component';
 import { KeysPipe } from './pipes/keys.pipe';
+import { DontSanitizeHtmlPipe } from './pipes/dont-sanitize-html.pipe';
 import { CocComponent } from './coc/coc.component';
 
 import {
@@ -117,6 +118,7 @@ export function initL10n(l10nLoader: L10nLoader): Function {
     SessionSurveyComponent,
     SurveysComponent,
     KeysPipe,
+    DontSanitizeHtmlPipe,
     CocComponent
   ],
   imports: [
@@ -133,6 +135,7 @@ export function initL10n(l10nLoader: L10nLoader): Function {
     ScrollToModule.forRoot(),
     LocalizationModule.forRoot(l10nConfig)
   ],
+  exports: [ DontSanitizeHtmlPipe ],
   providers: [
     Title,
     SiteConfigService,
