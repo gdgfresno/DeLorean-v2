@@ -19,7 +19,7 @@
         </div>
         <!--/.Social buttons-->
         <p>{{ 'Footer.AboutUs' | translate:lang }}</p>
-        <p><small><strong>{{ 'Footer.Disclaimer' | translate:lang }}:</strong>&nbsp;<em>{{ config?.groupName }} {{ 'Footer.DisclaimerStatement' | translate:lang }}</em></small></p>
+        <p><small><strong>{{ 'Footer.Disclaimer' | translate:lang }}:</strong>&nbsp;<em>{{ 'Footer.DisclaimerStatement' | translate:lang:{ groupName: config?.groupName } }}</em></small></p>
       </div>
       <hr class="w-100 clearfix d-sm-none">
       <div class="col-lg-2 col-md-6 ml-auto">

@@ -10,7 +10,7 @@
     <div class="pt-1 pb-4">
       <h4 class="font-weight-bold">{{ 'COC.AntiHarassmentPolicy' | translate:lang }}</h4>
       <h5>
-        {{ siteConfig?.eventName }} {{ 'COC.COCPar1' | translate:lang }}
+        {{ 'COC.COCPar1' | translate:lang:{ eventName: siteConfig?.eventName } }}
       </h5>
     </div>
     <div class="pt-1 pb-4">
@@ -18,13 +18,13 @@
       <p>{{ 'COC.COCPar2' | translate:lang }}</p>
       <p class="font-weight-bold">{{ 'COC.Call911' | translate:lang }}</p>
       <p *ngIf="siteConfig?.eventReportEmail">{{ 'COC.COCTeam' | translate:lang }}: <a href="mailto:{{ siteConfig?.eventReportEmail }}?subject=CoC Alert - {{ siteConfig?.eventName }}">{{ siteConfig?.eventReportEmail }}</a></p>
-      <p>{{ siteConfig?.eventName }} {{ 'COC.Organizers' | translate:lang }}: <a href="mailto:{{ siteConfig?.eventEmail }}?subject=CoC Alert - {{ siteConfig?.eventName }}">{{ siteConfig?.eventEmail }}</a></p>
+      <p>{{ 'COC.Organizers' | translate:lang:{ eventName: siteConfig?.eventName } }}: <a href="mailto:{{ siteConfig?.eventEmail }}?subject=CoC Alert - {{ siteConfig?.eventName }}">{{ siteConfig?.eventEmail }}</a></p>
       <p><a href="https://www.rainn.org/" target="_blank" rel="noopener">RAINN</a> {{ 'COC.RAINN' | translate:lang }}: <a href="tel:800.656.4673">800.656.4673</a></p>
     </div>
     <div class="pt-1 pb-4">
       <h4 class="font-weight-bold">{{ 'COC.FullCOC' | translate:lang }}</h4>
-      <p>{{ 'COC.FCOCPar11' | translate:lang }} {{ siteConfig?.eventName }} {{ 'COC.FCOCPar12' | translate:lang }}</p>
-      <p>{{ siteConfig?.eventName }} {{ 'COC.FCOCPar2' | translate:lang }}</p>
+      <p>{{ 'COC.FCOCPar1' | translate:lang:{ eventName: siteConfig?.eventName } }}</p>
+      <p>{{ 'COC.FCOCPar2' | translate:lang:{ eventName: siteConfig?.eventName } }}</p>
       <div>
         {{ 'COC.Harassment' | translate:lang }}:
         <ul>
@@ -59,7 +59,7 @@
     </div>
     <div class="pt-1 pb-4">
       <h5 class="font-weight-bold">{{ 'COC.PersonalReport' | translate:lang }}</h5>
-      <p>{{ 'COC.ReportPar51' | translate:lang }} {{ siteConfig?.eventName }} {{ 'COC.ReportPar52' | translate:lang }}</p>
+      <p>{{ 'COC.ReportPar5' | translate:lang:{ eventName: siteConfig?.eventName } }}</p>
       <p>{{ 'COC.ReportPar6' | translate:lang }}</p>
       <p>{{ 'COC.ReportPar7' | translate:lang }}</p>
     </div>
@@ -69,7 +69,7 @@
         {{ 'COC.LicPar11' | translate:lang }} <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy" target="_blank" rel="noopener">{{ 'COC.LicPar12' | translate:lang }}</a>,
         {{ 'COC.LicPar2' | translate:lang }}
       </p>
-      <p>{{ 'COC.LicPar31' | translate:lang }} {{ siteConfig?.eventName }} {{ 'COC.LicPar32' | translate:lang }} <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">Creative Commons Attribution 3.0 Unported License</a>.</p>
+      <p>{{ 'COC.LicPar3' | translate:lang:{ eventName: siteConfig?.eventName } }} <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">Creative Commons Attribution 3.0 Unported License</a>.</p>
     </div>
   </section>
   <!--Section: Coc-->

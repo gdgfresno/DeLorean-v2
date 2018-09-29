@@ -35,20 +35,12 @@
 
   <!--Section: About-->
   <section class="text-center" *ngIf="!config?.eventType || config?.eventType === 'DevFest'">
-    <p>
-      <strong>GDG DevFests</strong> {{ 'Home.DevfestPara1' | translate:lang }}
-    </p>
-    <p>
-      <strong>{{ config?.eventName }}</strong> {{ 'Home.DevfestPara2' | translate:lang }}
-    </p>
+    <p [innerHTML]="'Home.DevfestPara1' | translate:lang"></p>
+    <p [innerHTML]="'Home.DevfestPara2' | translate:lang:{ eventName: config?.eventName }"></p>
   </section>
   <section class="text-center" *ngIf="config?.eventType === 'IWD'">
-    <p>
-      <strong>{{ 'Home.IWD' | translate:lang }}</strong> {{ 'Home.IWDPara1' | translate:lang }}
-    </p>
-    <p>
-      <strong>{{ config?.eventName }}</strong> {{ 'Home.IWDPara2' | translate:lang }}
-    </p>
+    <p [innerHTML]="'Home.IWDPara1' | translate:lang"></p>
+    <p [innerHTML]="'Home.IWDPara2' | translate:lang:{ eventName: config?.eventName }"></p>
   </section>
   <section class="text-center" *ngIf="config?.eventType === 'Other'">
     <p [innerHTML]="config?.eventDescription"></p>
@@ -153,10 +145,10 @@
   <!--Section: CoC-->
   <section id="coc" class="text-center">
     <h5>{{ 'Home.COCHeader' | translate:lang }}</h5>
-    <p>{{ config?.eventName }} {{ 'Home.COCPara1' | translate:lang }}</p>
+    <p>{{ 'Home.COCPara1' | translate:lang:{ eventName: config?.eventName } }}</p>
     <p>
       {{ 'Home.COCPara2' | translate:lang }} <a routerLink="/code-of-conduct">{{ config?.eventName }} {{ 'Home.CodeOfConduct' | translate:lang }}</a>.
-      {{ 'Home.COCPara3' | translate:lang }} {{ config?.eventName }}.
+      {{ 'Home.COCPara3' | translate:lang:{ eventName: config?.eventName } }}.
       {{ 'Home.Please' | translate:lang }} <a href="mailto:{{ config?.eventEmail }}?subject=Code of Conduct - {{ config?.eventName }}" target="_blank" rel="noopener">{{ 'Home.ContactUs' | translate:lang }}</a> {{ 'Home.AnyQuestions' | translate:lang }}
     </p>
   </section>

@@ -1,6 +1,6 @@
 import { SiteConfigService } from './../admin/shared/site-config/site-config.service';
-import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { Component, OnInit } from '@angular/core';
 import {
     TranslationService,
