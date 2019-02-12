@@ -7,6 +7,7 @@
 
 # API Keys
 /src/environments/firebase.config.ts
+/.firebase
 
 # dependencies
 /node_modules
