@@ -212,6 +212,11 @@
               name="venueDescription"></textarea>
             <label for="venueDescription" [class.active]="siteConfig.venueDescription && siteConfig.venueDescription.length > 0">Venue Bio:</label>
           </div>
+          <div class="md-form">
+            <i class="fa fa-map prefix grey-text"></i>
+            <input type="text" [(ngModel)]="siteConfig.parkingMapUrl" name="parkingMapUrl" id="parkingMapUrl" class="form-control">
+            <label for="parkingMapUrl" [class.active]="siteConfig.parkingMapUrl && siteConfig.parkingMapUrl.length > 0">Parking Map URL:</label>
+          </div>
           <div class="form-group" style="padding-bottom: 25px;">
             <label for="venuePhoto">Venue Photo:</label>
             <input type="file" class="form-control-file" id="venuePhoto" accept="image/jpeg,image/jpg,image/png,image/x-png" aria-describedby="Venue Photo">
