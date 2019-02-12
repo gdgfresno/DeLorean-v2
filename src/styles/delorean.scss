@@ -32,6 +32,22 @@
   background-color: rgba(0,0,0,0.5)!important;
 }
 
+// [ Trying to fix hero height issues, TODO: try to remove this once I build on Linux again...
+.full-height, .full-height body, .full-height header, .full-height header .view {
+  height:100%
+}
+
+.view .full-bg-img, .view .full-bg-img video {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+} 
+
+.view .full-bg-img {
+  height: 100%;
+}
+// ]
+
 .text-center {
   text-align: center!important;
 }
@@ -73,7 +89,7 @@
 .icons-sm {
   padding:.5rem;
   margin:.5rem;
-  font-size:1.2rem;
+  font-size: 1.2rem;
 }
 
 .section.team-section .avatar,
@@ -83,8 +99,7 @@
   height: auto;
   position: relative;
   overflow: hidden;
-  margin-bottom:2rem;
-  height:auto;
+  margin-bottom: 2rem;
 }
 
 .section.team-section .avatar .rounded-circle,
@@ -109,7 +124,7 @@
 
 .section.team-section h4,
 .section.team-section h5 {
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 }
 
 .section.team-section .grey-text {
