@@ -90,7 +90,8 @@
         <h2 class="h2-responsive">{{ config?.venueName }}</h2>
         <hr>
         <p [innerHTML]="config?.venueDescription"></p>
-        <p><a href="{{ config?.parkingMapUrl }}" target="_blank">{{ 'Home.ParkingMap' | translate:lang }}</a></p>
+        <p *ngIf="config?.parkingMapUrl"><a href="{{ config?.parkingMapUrl }}" target="_blank">{{ 'Home.ParkingMap' | translate:lang }}</a></p>
+        <p *ngIf="config?.floorPlanUrl"><a href="{{ config?.floorPlanUrl }}" target="_blank">{{ 'Home.FloorPlan' | translate:lang }}</a></p>
       </div>
       <div class="col-md-7">
         <div class="card">
