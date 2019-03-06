@@ -59,8 +59,8 @@ export class SessionListComponent implements OnInit {
 
   addSection(title, rank) {
     this.section.title = title.replace(/^\s+|\s+$/g, '');
-    let integerRegex = new RegExp('^\\d+$');
-    this.section.rank = integerRegex.test(rank) ? parseInt(rank) : 0;
+    const integerRegex = new RegExp('^\\d+$');
+    this.section.rank = integerRegex.test(rank) ? parseInt(rank, 10) : 0;
     this.sectionService.createSection(this.section);
     this.section = new Section();
     this.sectionModal.hide();
