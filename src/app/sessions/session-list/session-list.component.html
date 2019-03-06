@@ -6,7 +6,14 @@
   <section class="section">
     <div class="d-print-none">
       <div class="pull-right" style="margin-top: -45px;">
-        <a href="javascript:window.print();" title="{{ 'Schedule.PrintSchedule' | translate:lang }}"><i class="fa fa-print" aria-hidden="true"></i> {{ 'Schedule.PrintSchedule' | translate:lang }}</a>
+        <a href="javascript:window.print();" title="{{ 'Schedule.PrintSchedule' | translate:lang }}">
+          <i class="fa fa-print" aria-hidden="true"></i> {{ 'Schedule.PrintSchedule' | translate:lang }}
+        </a>
+      </div>
+      <div *ngIf="siteConfig | async as config" class="pull-left" style="margin-top: -45px;">
+        <a href="{{ config?.floorPlanUrl }}" target="_blank" title="{{ 'Home.FloorPlan' | translate:lang }}">
+          <i class="fa fa-map" aria-hidden="true"></i> {{ 'Home.FloorPlan' | translate:lang }}
+        </a>
       </div>
       <h1 class="section-heading">{{ 'Schedule.OurSchedule' | translate:lang }}</h1>
       <div class="text-center" *ngIf="isLoggedIn() && isAdmin()">
