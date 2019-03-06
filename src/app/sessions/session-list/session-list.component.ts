@@ -6,6 +6,9 @@ import { SessionService } from './../shared/session.service';
 import { Session } from './../shared/session';
 import { Section } from './../shared/section';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+import { SiteConfig } from './../../admin/shared/site-config/site-config';
+import { SiteConfigService } from './../../admin/shared/site-config/site-config.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
 import {
@@ -23,6 +26,9 @@ import {
 export class SessionListComponent implements OnInit {
   public sessions: FirebaseListObservable<Session[]>;
   public sections: FirebaseListObservable<Section[]>;
+
+  siteConfig: FirebaseObjectObservable<SiteConfig>;
+
   section: Section = new Section();
   @Language() lang: string;
   @DefaultLocale() defaultLocale: string;
@@ -33,6 +39,7 @@ export class SessionListComponent implements OnInit {
     private sessionService: SessionService,
     private sectionService: SectionService,
     private speakerService: SpeakerService,
+    private siteConfigService: SiteConfigService,
     private authService: AuthService,
     private router: Router,
     public translation: TranslationService
@@ -41,7 +48,8 @@ export class SessionListComponent implements OnInit {
   ngOnInit() {
     this.sessions = this.sessionService.getSessionList({ orderByChild: 'rank' });
     this.sections = this.sectionService.getSectionList({ orderByChild: 'rank' });
-  }
+    this.siteConfig = this.siteConfigService.getConfig();
+}
 
   isLoggedIn() {
     return this.authService.isLoggedIn();
