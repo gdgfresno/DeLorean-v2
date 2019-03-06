@@ -56,6 +56,7 @@ export class SiteConfigService {
             venueGeoData: siteConfig.venueGeoData ? siteConfig.venueGeoData : null,
             venueDescription: siteConfig.venueDescription ? siteConfig.venueDescription : null,
             parkingMapUrl: siteConfig.parkingMapUrl ? siteConfig.parkingMapUrl : null,
+            floorPlanUrl: siteConfig.floorPlanUrl ? siteConfig.floorPlanUrl : null,
           });
         });
     } else {
@@ -92,7 +93,8 @@ export class SiteConfigService {
         venueAddress: siteConfig.venueAddress ? siteConfig.venueAddress : null,
         venueGeoData: siteConfig.venueGeoData ? siteConfig.venueGeoData : null,
         venueDescription: siteConfig.venueDescription ? siteConfig.venueDescription : null,
-        parkingMapUrl: siteConfig.parkingMapUrl ? siteConfig.parkingMapUrl : null
+        parkingMapUrl: siteConfig.parkingMapUrl ? siteConfig.parkingMapUrl : null,
+        floorPlanUrl: siteConfig.floorPlanUrl ? siteConfig.floorPlanUrl : null,
       });
     }
   }
