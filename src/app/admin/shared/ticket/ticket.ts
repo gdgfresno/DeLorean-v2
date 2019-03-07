@@ -9,5 +9,5 @@ export class Ticket {
   description3: string;
   description4: string;
   timeStamp: any = firebase.database.ServerValue.TIMESTAMP;
-  active: boolean = true;
+  active = true;
 }
