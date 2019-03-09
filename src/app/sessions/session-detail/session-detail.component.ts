@@ -115,7 +115,7 @@ export class SessionDetailComponent implements OnInit {
       title: this.session.title,
       time: this.session.time,
       tag: this.session.tag ? this.session.tag : null,
-      speakers: this.session.speakers,
+      speakers: this.session.speakers ? this.session.speakers : null,
       room: this.session.room,
       section: this.session.section,
       value: true
