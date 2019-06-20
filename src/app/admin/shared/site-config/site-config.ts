@@ -31,5 +31,7 @@ export class SiteConfig {
   venueAddress: string;
   venueGeoData: any;
   venueDescription: string;
+  parkingMapUrl: string;
+  floorPlanUrl: string;
   venuePhoto: File;
 }

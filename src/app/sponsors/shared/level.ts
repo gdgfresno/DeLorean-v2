@@ -5,5 +5,5 @@ export class Level {
   name: string;
   rank: number;
   timeStamp: any = firebase.database.ServerValue.TIMESTAMP;
-  active: boolean = true;
+  active = true;
 }

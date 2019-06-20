@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteConfigComponent implements OnInit {
   siteConfig: SiteConfig = new SiteConfig();
-  addConfig: boolean = true;
+  addConfig = true;
 
   constructor(
     private siteConfigService: SiteConfigService,
