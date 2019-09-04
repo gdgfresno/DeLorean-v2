@@ -1,0 +1,64 @@
+<app-top-menu></app-top-menu>
+
+<div class="between-sections d-print-none"><br><br></div>
+<div class="container">
+  <!--Section: Hackathon-->
+  <section class="section" *ngIf="siteConfig | async as siteConfig">
+    <div>
+      <h1 class="section-heading">{{ 'Menu.Hackathon' | translate:lang }}</h1>
+    </div>
+    <div class="pt-1 pb-4">
+      <h4 class="font-weight-bold">Valley DevFest 2019 and GDG Fresno in partnership with
+          59 Days of Code and Code for Fresno are holding a 23hr hackathon!</h4>
+      <p>
+        While you compete in the Hackathon you are welcome to Valley DevFest 2019;
+        there will be a light breakfast, lunch by LaJacka, talks and workshops
+        (a great chance to ask experienced developers for advice).
+      </p>
+    </div>
+    <div class="pt-1 pb-4">
+      <p>The teams will choose one of two prompts; the Design Challenge or the Technical Challenge.</p>
+      <div>
+        Design Challenge:
+        <ul>
+          <li>Create a user-friendly “Know Your Rights” site, page, or graphic about criminal record relief.
+            This can be a website or even a digital image for social media.</li>
+        </ul>
+      </div>
+      <div>
+        Technical Challenge:
+        <ul>
+          <li>Create a services usability review site, which evaluates the services available to people seeking
+            criminal record relief (i.e., expungement, sealing, dismissal, reduction, etc).</li>
+        </ul>
+      </div>
+      <p>Each prompt will have a <span class="font-weight-bold">prize of $500</span> and a year of membership to The Hashtag!</p>
+    </div>
+    <div class="pt-1 pb-4">
+      <h5 class="font-weight-bold">Registration Fee:</h5>
+      <p>Your ticket to Valley DevFest</p>
+    </div>
+    <div class="pt-1 pb-4">
+      <h5 class="font-weight-bold">Agenda</h5>
+      <h6 class="font-weight-bold">Friday 9/20</h6>
+      <p>6:00pm: Doors open</p>
+      <p>6:30pm: Kickoff announcement</p>
+      <p>7:00pm: Let the hacking begin!</p>
+      <p>8:00pm: Go home and get some sleep!</p>
+      <p>Participants must leave Bitwise at 10pm Friday night. However
+        <a href="https://hashtagfresno.com/" target="_blank" rel="noopener">#Hashtag Coworking Place</a>
+        has generously agreed to donate a one week trial membership to each participant, and they are open 24hrs.
+        (Though we do encourage you to go home and get some sleep.)</p>
+    </div>
+    <div class="pt-1 pb-4">
+      <h6 class="font-weight-bold">Saturday 9/21</h6>
+      <p>6:00am: Doors re-open</p>
+      <p>5:45pm: Winners announced and closing statements</p>
+      <p>Teams are limited to 4 members and must declare which challenge they’re competing in.
+         Attendees must check in in-person during the kickoff, but during the hackathon they are not required to stay on site.
+         Hackers must be present to win, duh.</p>
+    </div>
+  </section>
+  <!--Section: Hackathon-->
+</div>
+<div class="between-sections"><br><br></div>

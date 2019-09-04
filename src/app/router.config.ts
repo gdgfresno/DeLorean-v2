@@ -1,4 +1,5 @@
 import { CocComponent } from './coc/coc.component';
+import { HackathonComponent } from './hackathon/hackathon.component';
 import { SurveysComponent } from './admin/surveys/surveys.component';
 import { SessionSurveyComponent } from './sessions/session-survey/session-survey.component';
 import { MyScheduleComponent } from './sessions/my-schedule/my-schedule.component';
@@ -152,6 +153,10 @@ export const routerConfig: Route[] = [{
   path: 'code-of-conduct',
   component: CocComponent,
   data: { title: 'Code of Conduct' }
+}, {
+  path: 'hackathon',
+  component: HackathonComponent,
+  data: { title: 'Hackathon' }
 }, {
   path: '',
   redirectTo: 'home',

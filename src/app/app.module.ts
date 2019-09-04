@@ -54,6 +54,7 @@ import { SessionSurveyComponent } from './sessions/session-survey/session-survey
 import { SurveysComponent } from './admin/surveys/surveys.component';
 import { KeysPipe } from './pipes/keys.pipe';
 import { CocComponent } from './coc/coc.component';
+import { HackathonComponent } from './hackathon/hackathon.component';
 
 import {
     L10nConfig,
@@ -117,7 +118,8 @@ export function initL10n(l10nLoader: L10nLoader): Function {
     SessionSurveyComponent,
     SurveysComponent,
     KeysPipe,
-    CocComponent
+    CocComponent,
+    HackathonComponent
   ],
   imports: [
     BrowserModule,
