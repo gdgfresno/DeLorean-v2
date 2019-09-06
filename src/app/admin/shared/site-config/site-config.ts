@@ -26,6 +26,7 @@ export class SiteConfig {
   speakerURL: string;
   ticketURL: string;
   sponsorURL: string;
+  hackathonRegURL: string;
 
   venueName: string;
   venueAddress: string;

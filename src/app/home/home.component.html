@@ -19,7 +19,7 @@
         </p>
         <a target="_blank" rel="noopener" [href]="config?.ticketURL" class="btn btn-primary btn-lg" rel="nofollow">{{ 'Home.ReserveYourSeat' | translate:lang }}</a>
         <a *ngIf="config?.speakerURL" target="_blank" rel="noopener" [href]="config?.speakerURL" class="btn btn-default btn-lg" rel="nofollow">{{ 'Home.BecomeASpeaker' | translate:lang }}</a>
-        <a href="/hackathon" class="btn btn-primary btn-lg">{{ 'Menu.Hackathon' | translate:lang }}</a>
+        <a *ngIf="config?.hackathonRegURL" target="_blank" rel="noopener" [href]="config?.hackathonRegURL" class="btn btn-primary btn-lg">{{ 'Home.HackathonRegistration' | translate:lang }}</a>
       </div>
       <div class="arrow bounce">
         <a class="fa fa-chevron-down fa-1x" [ngx-scroll-to]="'#hackathon'"></a>
@@ -72,13 +72,23 @@
   <section class="text-center">
     <!--button-->
     <div class="social-section mb-3">
-        <h5 class="title mt-3 mb-4">Check the details by clicking on the button below</h5>
-        <ul>
-          <li><a class="btn-social-all" href="/hackathon">{{ 'Menu.Hackathon' | translate:lang }}</a></li>
-        </ul>
-      </div>
-      <!--/.buttons-->
-    </section>
+      <h5 class="title mt-3 mb-4">Check the details by clicking on the button below:</h5>
+      <ul>
+        <li><a class="btn-social-all" href="/hackathon">{{ 'Menu.Hackathon' | translate:lang }}</a></li>
+      </ul>
+    </div>
+    <!--/.buttons-->
+  </section>
+  <section class="text-center" *ngIf="config?.hackathonRegURL">
+    <!--button-->
+    <div class="social-section mb-3">
+      <h5 class="title mt-3 mb-4">Or register right away:</h5>
+      <ul>
+        <li><a class="btn-social-all" target="_blank" rel="noopener" [href]="config?.hackathonRegURL">{{ 'Home.HackathonRegistration' | translate:lang }}</a></li>
+      </ul>
+    </div>
+    <!--/.buttons-->
+  </section>
   <!--Section: Hackathon-->
 
   <div class="divider-new pt-5" *ngIf="(speakers$ | async)?.length > 0">

@@ -50,6 +50,7 @@ export class SiteConfigService {
             speakerURL: siteConfig.speakerURL ? siteConfig.speakerURL : null,
             ticketURL: siteConfig.ticketURL ? siteConfig.ticketURL : null,
             sponsorURL: siteConfig.sponsorURL ? siteConfig.sponsorURL : null,
+            hackathonRegURL: siteConfig.hackathonRegURL ? siteConfig.hackathonRegURL : null,
 
             venueName: siteConfig.venueName ? siteConfig.venueName : null,
             venueAddress: siteConfig.venueAddress ? siteConfig.venueAddress : null,
@@ -88,6 +89,7 @@ export class SiteConfigService {
         speakerURL: siteConfig.speakerURL ? siteConfig.speakerURL : null,
         ticketURL: siteConfig.ticketURL ? siteConfig.ticketURL : null,
         sponsorURL: siteConfig.sponsorURL ? siteConfig.sponsorURL : null,
+        hackathonRegURL: siteConfig.hackathonRegURL ? siteConfig.hackathonRegURL : null,
 
         venueName: siteConfig.venueName ? siteConfig.venueName : null,
         venueAddress: siteConfig.venueAddress ? siteConfig.venueAddress : null,

@@ -192,6 +192,11 @@
             <input type="text" [(ngModel)]="siteConfig.sponsorURL" name="sponsorURL" id="sponsorURL" class="form-control">
             <label for="sponsorURL" [class.active]="siteConfig.sponsorURL && siteConfig.sponsorURL.length > 0">Sponsor Benefits URL:</label>
           </div>
+          <div class="md-form">
+            <i class="fa fa-laptop prefix grey-text"></i>
+            <input type="text" [(ngModel)]="siteConfig.hackathonRegURL" name="hackathonRegURL" id="hackathonRegURL" class="form-control">
+            <label for="hackathonRegURL" [class.active]="siteConfig.hackathonRegURL && siteConfig.hackathonRegURL.length > 0">Hackathon Reg. Form URL:</label>
+          </div>
           <hr class="my-5">
           <h2 class="title">
             <strong>Venue Details:</strong>
