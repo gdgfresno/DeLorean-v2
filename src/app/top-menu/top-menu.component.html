@@ -7,7 +7,7 @@
       <li class="nav-item">
         <a class="nav-link waves-light" mdbRippleRadius routerLink="/home">{{ 'Menu.Home' | translate:lang }}</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="config?.hackathonRegURL">
         <a class="nav-link waves-light" mdbRippleRadius routerLink="/hackathon">{{ 'Menu.Hackathon' | translate:lang }}</a>
       </li>
       <li class="nav-item dropdown btn-group" dropdown>

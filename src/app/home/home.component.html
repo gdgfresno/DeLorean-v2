@@ -20,7 +20,7 @@
         <a target="_blank" rel="noopener" [href]="config?.ticketURL" class="btn btn-primary btn-lg" rel="nofollow">{{ 'Home.ReserveYourSeat' | translate:lang }}</a>
         <a *ngIf="config?.speakerURL" target="_blank" rel="noopener" [href]="config?.speakerURL" class="btn btn-default btn-lg" rel="nofollow">{{ 'Home.BecomeASpeaker' | translate:lang }}</a>
       </div>
-      <div class="arrow bounce">
+      <div class="arrow bounce" *ngIf="config?.hackathonRegURL">
         <a class="fa fa-chevron-down fa-1x" [ngx-scroll-to]="'#hackathon'"></a>
       </div>
     </div>
@@ -60,15 +60,15 @@
   </section>
   <!--Section: About-->
 
-  <div id="hackathon" class="divider-new pt-5">
+  <div id="hackathon" class="divider-new pt-5" *ngIf="config?.hackathonRegURL">
     <h2 class="h2-responsive">{{ 'Menu.Hackathon' | translate:lang }}</h2>
   </div>
 
   <!--Section: Hackathon-->
-  <section class="text-center">
+  <section class="text-center" *ngIf="config?.hackathonRegURL">
     <p>Valley DevFest 2019 and GDG Fresno in partnership with 59 Days of Code and Code for Fresno are holding a 23hr hackathon!</p>
   </section>
-  <section class="text-center">
+  <section class="text-center" *ngIf="config?.hackathonRegURL">
     <!--button-->
     <div class="social-section mb-3">
       <h5 class="title mt-3 mb-4">Check the details by clicking on the button below:</h5>
@@ -88,7 +88,7 @@
     </div>
     <!--/.buttons-->
   </section>
-  <section class="text-center">
+  <section class="text-center" *ngIf="config?.hackathonRegURL">
     <!--button-->
     <div class="social-section mb-3">
       <p>Kickoff meeting is on Friday 9/20 at 6pm at <a href="#the-venue">{{ config?.venueName }}</a> Class Room 4</p>
