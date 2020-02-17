@@ -47,7 +47,9 @@
   },
   "Profile": {
     "MyProfile": "Mi perfil",
-    "LoggedInWith": "Conectado con"
+    "LoggedInWith": "Conectado con",
+    "Anonymous": "Anónimo",
+    "AnonymousInfo": "Es posible que no pueda acceder a la información ingresada en modo anónimo en otros dispositivos. (por ejemplo, dar comentarios de la sesión o elaborar su horario). Si desea acceder a estos en otros dispositivos, le sugerimos que inicie sesión con uno de los proveedores compatibles (Google, Facebook, Twitter, Github). Valoramos, respetamos y apreciamos los comentarios de su sesión; ¡siéntase libre de permanecer en el anonimato si lo desea!"
   },
   "Footer": {
     "AboutUs": "Somos un grupo de usuarios de tecnología que se reúne regularmente para analizar las últimas tecnologías, herramientas, SDK, API y mucho más de Google.",

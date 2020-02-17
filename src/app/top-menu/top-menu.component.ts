@@ -2,13 +2,15 @@ import { SiteConfigService } from './../admin/shared/site-config/site-config.ser
 import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { SiteConfig } from './../admin/shared/site-config/site-config';
 import { AuthService } from './../services/auth/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'angular-bootstrap-md';
 import { Router } from '@angular/router';
 import {
     LocaleService,
     TranslationService,
     Language
 } from 'angular-l10n';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-top-menu',
@@ -16,6 +18,7 @@ import {
   styleUrls: ['./top-menu.component.scss']
 })
 export class TopMenuComponent implements OnInit {
+  @ViewChild('loginModal') public loginModal: ModalDirective;
   siteConfig: FirebaseObjectObservable<SiteConfig>;
   @Language() lang: string;
 
@@ -36,8 +39,25 @@ export class TopMenuComponent implements OnInit {
     this.siteConfig = this.siteConfigService.getConfig();
   }
 
-  userLogin() {
-    this.authService.userLogin().then(() => this.router.navigate(['/home']), alert);
+  goHome() {
+    this.loginModal.hide();
+    this.router.navigate(['/home']);
+  }
+
+  googleLogin() {
+    this.authService.googleLogin(() => this.goHome());
+  }
+
+  facebookLogin() {
+    this.authService.facebookLogin(() => this.goHome());
+  }
+
+  twitterLogin() {
+    this.authService.twitterLogin(() => this.goHome());
+  }
+
+  githubLogin() {
+    this.authService.githubLogin(() => this.goHome());
   }
 
   isLoggedIn() {
@@ -48,8 +68,12 @@ export class TopMenuComponent implements OnInit {
     return this.authService.isAdmin();
   }
 
+  isAnonymous() {
+    return this.authService.anonymous();
+  }
+
   userLogout() {
-    this.authService.userLogout().then(() => this.router.navigate(['/home']), alert);
+    this.authService.userLogout().then(() => this.goHome(), alert);
   }
 
   get currentLanguage(): string {

@@ -30,7 +30,7 @@
         <a class="nav-link waves-light" mdbRippleRadius routerLink="/sponsors">{{ 'Menu.Sponsors' | translate:lang }}</a>
       </li>
       <li class="nav-item" *ngIf="!isLoggedIn()">
-        <a class="nav-link waves-light" mdbRippleRadius (click)="userLogin()">{{ 'Menu.Login' | translate:lang }}</a>
+        <a class="nav-link waves-light" mdbRippleRadius (click)="loginModal.show()">{{ 'Menu.Login' | translate:lang }}</a>
       </li>
       <li class="nav-item dropdown btn-group" *ngIf="isLoggedIn()" dropdown>
         <a dropdownToggle class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
@@ -45,7 +45,8 @@
           <div class="divider dropdown-divider" *ngIf="isAdmin()"></div>
           <a class="dropdown-item waves-light" routerLink="/profile">{{ 'Menu.MyProfile' | translate:lang }}</a>
           <a class="dropdown-item waves-light" routerLink="/my-schedule">{{ 'Menu.MySchedule' | translate:lang }}</a>
-          <a class="dropdown-item waves-light" (click)="userLogout()">{{ 'Menu.Logout' | translate:lang }}</a>
+          <a class="dropdown-item waves-light" *ngIf="!isAnonymous()" (click)="userLogout()">{{ 'Menu.Logout' | translate:lang }}</a>
+          <a class="dropdown-item waves-light" *ngIf="isAnonymous()" (click)="loginModal.show()">{{ 'Menu.Login' | translate:lang }}</a>
         </div>
       </li>
       <li class="nav-item active">
@@ -55,3 +56,27 @@
   </links>
 </mdb-navbar>
 <!--/.Navbar-->
+
+<!-- Login Modal -->
+<div mdbModal #loginModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">{{ 'Menu.Login' | translate:lang }}</h5>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="loginModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-default" (click)="googleLogin()" title="Google {{ 'Menu.Login' | translate:lang }}"><i class="fa fa-google-plus"></i> Google {{ 'Menu.Login' | translate:lang }}</button>
+        <button type="button" class="btn btn-primary" (click)="facebookLogin()" title="Facebook {{ 'Menu.Login' | translate:lang }}"><i class="fa fa-facebook"></i> Facebook {{ 'Menu.Login' | translate:lang }}</button>
+        <button type="button" class="btn btn-primary" (click)="twitterLogin()" title="Twitter {{ 'Menu.Login' | translate:lang }}"><i class="fa fa-twitter"></i> Twitter {{ 'Menu.Login' | translate:lang }}</button>
+        <button type="button" class="btn btn-primary" (click)="githubLogin()" title="Github {{ 'Menu.Login' | translate:lang }}"><i class="fa fa-github"></i> Github {{ 'Menu.Login' | translate:lang }}</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="loginModal.hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Login Modal -->

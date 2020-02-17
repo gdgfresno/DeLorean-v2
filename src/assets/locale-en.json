@@ -47,7 +47,9 @@
     },
     "Profile": {
         "MyProfile": "My Profile",
-        "LoggedInWith": "Logged in with"
+        "LoggedInWith": "Logged in with",
+        "Anonymous": "Anonymous",
+        "AnonymousInfo": "You may not be able to access information entered in anonymous mode in other devices. (for example giving session feedback or constructing your schedule). If you'd like to access these in other devices we suggest you to log in with one of the supported providers (Google, Facebook, Twitter, Github). We value, respect, and appreciate your session feedback; feel free to remain anonymous if you wish!"
     },
     "Footer": {
         "AboutUs": "We are a technology user group that meets regularly to discuss the latest Google Technologies, Tools, SDKs, APIs, and much more.",

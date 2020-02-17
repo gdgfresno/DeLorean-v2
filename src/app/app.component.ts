@@ -4,6 +4,7 @@ import { SiteConfig } from './admin/shared/site-config/site-config';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from './services/auth/auth.service';
 
 import { mergeMap, map, filter } from 'rxjs/operators';
 
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private title: Title,
     private siteConfigService: SiteConfigService,
+    private authService: AuthService,
     public locale: LocaleService,
     public translation: TranslationService
   ) { }
@@ -68,6 +70,10 @@ export class AppComponent implements OnInit {
 
     // Initializes direction.
     this.dir = this.getLanguageDirection();
+
+    this.authService.anonymousLogin()
+      .then(() => console.log('Anonymous Login success'))
+      .catch(err => console.log(`Anonymous Login error: ${err}`));
   }
 
   getLanguageDirection(language?: string): Direction {

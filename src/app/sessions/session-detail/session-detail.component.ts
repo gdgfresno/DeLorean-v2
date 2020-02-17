@@ -86,10 +86,6 @@ export class SessionDetailComponent implements OnInit {
     this.profiles = profiles;
   }
 
-  userLogin() {
-    this.authService.userLogin().then(() => window.location.reload());
-  }
-
   isLoggedIn() {
     return this.authService.isLoggedIn();
   }

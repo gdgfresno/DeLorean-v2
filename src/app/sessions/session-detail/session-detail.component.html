@@ -38,11 +38,6 @@
           <button *ngIf="schedule.value" (click)="removeFromSchedule()" type="button" class="btn btn-outline-primary" title="{{ 'Schedule.RemoveFromMySchedule' | translate:lang }}"><i class="fa fa-calendar-times-o" aria-hidden="true"></i> {{ 'Schedule.RemoveFromMySchedule' | translate:lang }}</button>
           <button (click)="openFeedback(session)" type="button" class="btn btn-primary" title="{{ 'Schedule.GiveSessionFeedback' | translate:lang }}"><i class="fa fa-commenting" aria-hidden="true"></i> {{ 'Schedule.GiveSessionFeedback' | translate:lang }}</button>
         </div>
-
-        <div class="text-center" *ngIf="!isLoggedIn()" style="margin-top: 35px;">
-          <small>{{ 'Schedule.SmallInstruction' | translate:lang }}</small><br/>
-          <button (click)="userLogin()" type="button" class="btn btn-primary" title="{{ 'Menu.Login' | translate:lang }}">{{ 'Menu.Login' | translate:lang }}</button>
-        </div>
       </div>
     </div>
     <!--/First row-->
