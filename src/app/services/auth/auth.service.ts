@@ -39,6 +39,7 @@ export class AuthService {
   }
 
   upgradeAccount(credential: firebase.auth.AuthCredential, providerId: string, secondTry = false): Promise<any> {
+    // tslint:disable-next-line:prefer-const
     let that = this;
     // let currentUser = this.afAuth.auth.currentUser;
     return this.afAuth.auth.currentUser.linkWithCredential(credential)
