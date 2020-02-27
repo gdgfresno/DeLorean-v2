@@ -20,6 +20,10 @@ export class AuthService {
   public isAnonymous = true;  // For potential account merge later
   public anonymousUser: firebase.User = null;   // For potential account merge later
 
+  anonymousLogin(): Promise<any> {
+    return this.afAuth.auth.signInAnonymously();
+  }
+
   constructor(public afAuth: AngularFireAuth, public afDatabase: AngularFireDatabase) {
     afAuth.authState.subscribe(user => {
       if (user) {
@@ -30,20 +34,21 @@ export class AuthService {
         if (this.isAnonymous) {
           this.anonymousUser = user;
         }
+      } else {
+        this.anonymousLogin()
+          .then(() => console.log('Anonymous Login success'))
+          .catch(err => console.log(`Anonymous Login error: ${err}`));
       }
     });
   }
 
-  anonymousLogin(): Promise<any> {
-    return this.afAuth.auth.signInAnonymously();
-  }
-
-  upgradeAccount(credential: firebase.auth.AuthCredential, providerId: string, secondTry = false): Promise<any> {
+  upgradeAccount(credential: firebase.auth.AuthCredential, providerId: string): Promise<any> {
     // tslint:disable-next-line:prefer-const
     let that = this;
     // let currentUser = this.afAuth.auth.currentUser;
     return this.afAuth.auth.currentUser.linkWithCredential(credential)
       .then((usercred) => {
+        that.isAnonymous = false;
         console.log(`Anonymous account successfully upgraded ${usercred}`);
       }, (error) => {
         if (error.code === 'auth/provider-already-linked') {
@@ -57,7 +62,8 @@ export class AuthService {
 
   handleLogin(providerId: string, afterAction: SimpleFn): Promise<any> {
     return this.afAuth.auth.signInWithPopup(this.getProvider(providerId))
-      .then((result) => this.upgradeAccount(result.credential, providerId), (error) => this.handleError(error))
+      .then((result) => this.upgradeAccount(result.credential, providerId),
+        (error) => this.handleError(error, providerId, afterAction))
       .then(afterAction);
   }
 
@@ -92,7 +98,7 @@ export class AuthService {
     }
   }
 
-  handleError(error) {
+  handleError(error, providerId: string, afterAction: SimpleFn) {
     if (error.email && error.credential && error.code === 'auth/account-exists-with-different-credential') {
       return this.afAuth.auth.fetchProvidersForEmail(error.email)
         .then((providers) => {
@@ -107,6 +113,12 @@ export class AuthService {
           return this.afAuth.auth.signInWithPopup(linkedProvider)
             .then((result) => result.user.linkWithCredential(error.credential));
         });
+    } else if (error.code === 'auth/web-storage-unsupported') {
+      alert('We cannot log you in while in Incognito / Private window.');
+      // this.afAuth.auth.setPersistence(firebase.auth.Auth.Persistence.NONE);
+      // this.handleLogin(providerId, afterAction);
+    } else if (error.code === 'auth/popup-blocked') {
+      alert('Please allow the login popup window to appear then try again.');
     } else {
       console.log(`Unhandled error ${error.code}`);
     }
@@ -132,6 +144,10 @@ export class AuthService {
   }
 
   isAdmin() {
+    if (!this.isLoggedIn()) {
+      return false;
+    }
+
     let isAdmin: boolean;
     this.afDatabase.object(`/admins/${this.userId}`).subscribe(snapshot => {
       isAdmin = snapshot.$value;

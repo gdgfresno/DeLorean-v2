@@ -60,7 +60,7 @@ export class SessionListComponent implements OnInit {
   }
 
   openDetails(session) {
-    if ((this.isLoggedIn() && this.isAdmin()) || session.abstract) {
+    if (this.isAdmin() || session.abstract) {
       this.router.navigate([`/sessions/${session.$key}`]);
     }
   }
