@@ -16,4 +16,5 @@ export class Speaker {
   featured = false;
   timeStamp: any = firebase.database.ServerValue.TIMESTAMP;
   active = true;
+  role: string;
 }

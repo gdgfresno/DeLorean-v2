@@ -55,6 +55,15 @@
         <input mdbActive type="text" id="websiteLink" class="form-control" [(ngModel)]="speaker.websiteLink" name="websiteLink">
         <label for="websiteLink">Website:</label>
       </div>
+      <div style="padding-bottom: 25px;">
+        <label for="role">Role:&nbsp;</label>
+        <select class="mdb-select" id="role" [(ngModel)]="speaker.role" name="role">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="Speaker">Speaker</option>
+          <option value="Mentor">Mentor</option>
+          <option value="Organizer">Organizer</option>
+        </select>
+      </div>
     </form>
     <br><br>
     <div class="text-center">
