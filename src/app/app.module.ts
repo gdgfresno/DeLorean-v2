@@ -53,6 +53,7 @@ import { MyScheduleComponent } from './sessions/my-schedule/my-schedule.componen
 import { SessionSurveyComponent } from './sessions/session-survey/session-survey.component';
 import { SurveysComponent } from './admin/surveys/surveys.component';
 import { KeysPipe } from './pipes/keys.pipe';
+import { RolePipe } from './pipes/role.pipe';
 import { CocComponent } from './coc/coc.component';
 import { HackathonComponent } from './hackathon/hackathon.component';
 
@@ -118,6 +119,7 @@ export function initL10n(l10nLoader: L10nLoader): Function {
     SessionSurveyComponent,
     SurveysComponent,
     KeysPipe,
+    RolePipe,
     CocComponent,
     HackathonComponent
   ],
