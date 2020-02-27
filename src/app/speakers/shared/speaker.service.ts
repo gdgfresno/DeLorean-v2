@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Speaker } from './speaker';
 import { firebaseConfig } from './../../../environments/firebase.config';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 
@@ -21,6 +24,14 @@ export class SpeakerService {
       query: query
     });
     return this.speakers;
+  }
+
+  getSpeakerWithRoleList(role: string, query?: object): Observable<Speaker[]> {
+    return this.getSpeakerList(query).map<Speaker[], Speaker[]>(
+      _speakers => _speakers.filter(
+        speaker => (role ? speaker.role === role : !!!speaker.role)
+      )
+    );
   }
 
   getSpeaker(key: string): FirebaseObjectObservable<Speaker> {

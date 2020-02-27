@@ -5,6 +5,7 @@ import { Speaker } from './../shared/speaker';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'angular-bootstrap-md';
+import { Observable } from 'rxjs';
 import {
     TranslationService,
     Language,
@@ -19,7 +20,10 @@ import {
 export class SpeakerListComponent implements OnInit {
   @ViewChild('speakerModal') public speakerModal: ModalDirective;
 
-  public speakers: FirebaseListObservable<Speaker[]>;
+  public speakers: Observable<Speaker[]>;
+  public mentors: Observable<Speaker[]>;
+  public organizers: Observable<Speaker[]>;
+  public unroled: Observable<Speaker[]>;
   public speakerDetail: any;
   @Language() lang: string;
   @DefaultLocale() defaultLocale: string;
@@ -32,7 +36,10 @@ export class SpeakerListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.speakers = this.speakerService.getSpeakerList({ orderByChild: 'name' });
+    this.speakers = this.speakerService.getSpeakerWithRoleList('Speaker', { orderByChild: 'name' });
+    this.mentors = this.speakerService.getSpeakerWithRoleList('Mentor', { orderByChild: 'name' });
+    this.organizers = this.speakerService.getSpeakerWithRoleList('Organizer', { orderByChild: 'name' });
+    this.unroled = this.speakerService.getSpeakerWithRoleList('', { orderByChild: 'name' });
   }
 
   isLoggedIn() {
