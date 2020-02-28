@@ -2,14 +2,16 @@
 
 <div class="between-sections"><br><br></div>
 <div class="container">
-  <!--Section: Speakers-->
-  <section class="section team-section pb-3">
-    <h1 class="section-heading">{{ 'Speakers.OurSpeakers' | translate:lang }}</h1>
-    <div class="text-center" *ngIf="isAdmin()">
+  <!--Section: Speakers / Mentors / Organizers-->
+  <section class="section team-section pb-3" *ngFor="let speakerRole of roles">
+    <h1 class="section-heading" *ngIf="speakerRole === 'Speaker'">{{ 'Speakers.OurSpeakers' | translate:lang }}</h1>
+    <h1 class="section-heading" *ngIf="speakerRole === 'Mentor'">{{ 'Speakers.OurMentors' | translate:lang }}</h1>
+    <h1 class="section-heading" *ngIf="speakerRole === 'Organizer'">{{ 'Speakers.Organizers' | translate:lang }}</h1>
+    <div class="text-center" *ngIf="isAdmin() && speakerRole === 'Speaker'">
       <button type="button" class="btn btn-success" routerLink="/speakers/new">Create Speaker</button>
     </div>
-    <div class="row text-center" *ngIf="(speakers | async)?.length > 0 && speakers | async | role:'Speaker' as speakers">
-      <div *ngFor="let speaker of speakers" class="col-lg-3 col-md-6 mb-r" style="padding-left: 40px; padding-right: 40px; padding-bottom: 50px; margin: 0 auto;">
+    <div class="row text-center" *ngIf="speakers | async | role:speakerRole as speakersFiltered">
+      <div *ngFor="let speaker of speakersFiltered" class="col-lg-3 col-md-6 mb-r" style="padding-left: 40px; padding-right: 40px; padding-bottom: 50px; margin: 0 auto;">
         <div class="avatar show-modal" (click)="showModal(speaker)" title="{{ speaker.name }}" alt="{{ speaker.name }}">
           <img *ngIf="!speaker.photoURL" class="rounded-circle z-depth-1" style="background-image: url('../../../assets/img/user-default.png')">
           <img *ngIf="speaker.photoURL" class="rounded-circle z-depth-1" [ngStyle]="{'background-image': 'url(' + speaker.photoURL + ')'}">
@@ -49,151 +51,12 @@
         </a>
       </div>
     </div>
-    <div class="text-center" *ngIf="(speakers | async)?.length === 0">
+    <hr *ngIf="speakerRole && speakerRole !== 'Organizer'">
+    <div class="text-center" *ngIf="speakerRole === 'Speaker' && (speakers | async)?.length === 0">
       <h5>{{ 'Speakers.StayTuned' | translate:lang }}</h5>
     </div>
   </section>
-  <!--Section: Speakers-->
-  <!--Section: Mentors-->
-  <section class="section team-section pb-3" *ngIf="(mentors | async)?.length > 0">
-    <hr>
-    <h1 class="section-heading">{{ 'Speakers.OurMentors' | translate:lang }}</h1>
-    <div class="row text-center">
-      <div *ngFor="let speaker of mentors | async" class="col-lg-3 col-md-6 mb-r" style="padding-left: 40px; padding-right: 40px; padding-bottom: 50px; margin: 0 auto;">
-        <div class="avatar show-modal" (click)="showModal(speaker)" title="{{ speaker.name }}" alt="{{ speaker.name }}">
-          <img *ngIf="!speaker.photoURL" class="rounded-circle z-depth-1" style="background-image: url('../../../assets/img/user-default.png')">
-          <img *ngIf="speaker.photoURL" class="rounded-circle z-depth-1" [ngStyle]="{'background-image': 'url(' + speaker.photoURL + ')'}">
-        </div>
-        <button type="button" class="btn btn-sm btn-primary" *ngIf="isAdmin()" routerLink="/speakers/{{ speaker.$key }}/edit">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="btn btn-sm btn-danger" *ngIf="isAdmin()" (click)="deleteSpeaker(speaker)">
-          <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-        <h4 class="show-modal" (click)="showModal(speaker)" [innerHTML]="speaker.name"></h4>
-        <h6>
-          <span *ngIf="speaker.title" [innerHTML]="speaker.title"></span>
-          <br/>
-          <strong *ngIf="speaker.company">@
-            <span [innerHTML]="speaker.company"></span>
-          </strong>
-        </h6>
-        <p class="speaker-bio show-modal" (click)="showModal(speaker)" [innerHTML]="speaker.description"></p>
-        <a *ngIf="speaker.googleLink" class="icons-sm gplus-ic" href="https://plus.google.com/{{ speaker.googleLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-google-plus" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.facebookLink" class="icons-sm fb-ic" href="https://www.facebook.com/{{ speaker.facebookLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.twitterLink" class="icons-sm tw-ic" href="https://twitter.com/{{ speaker.twitterLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.linkedinLink" class="icons-sm li-ic" href="https://www.linkedin.com/{{ speaker.linkedinLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.githubLink" class="icons-sm git-ic" href="https://github.com/{{ speaker.githubLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.websiteLink" class="icons-sm email-ic" href="{{ speaker.websiteLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-chrome" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!--Section: Mentors-->
-  <!--Section: Organizers-->
-  <section class="section team-section pb-3" *ngIf="(organizers | async)?.length > 0">
-    <hr>
-    <h1 class="section-heading">{{ 'Speakers.Organizers' | translate:lang }}</h1>
-    <div class="row text-center">
-      <div *ngFor="let speaker of organizers | async" class="col-lg-3 col-md-6 mb-r" style="padding-left: 40px; padding-right: 40px; padding-bottom: 50px; margin: 0 auto;">
-        <div class="avatar show-modal" (click)="showModal(speaker)" title="{{ speaker.name }}" alt="{{ speaker.name }}">
-          <img *ngIf="!speaker.photoURL" class="rounded-circle z-depth-1" style="background-image: url('../../../assets/img/user-default.png')">
-          <img *ngIf="speaker.photoURL" class="rounded-circle z-depth-1" [ngStyle]="{'background-image': 'url(' + speaker.photoURL + ')'}">
-        </div>
-        <button type="button" class="btn btn-sm btn-primary" *ngIf="isAdmin()" routerLink="/speakers/{{ speaker.$key }}/edit">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="btn btn-sm btn-danger" *ngIf="isAdmin()" (click)="deleteSpeaker(speaker)">
-          <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-        <h4 class="show-modal" (click)="showModal(speaker)" [innerHTML]="speaker.name"></h4>
-        <h6>
-          <span *ngIf="speaker.title" [innerHTML]="speaker.title"></span>
-          <br/>
-          <strong *ngIf="speaker.company">@
-            <span [innerHTML]="speaker.company"></span>
-          </strong>
-        </h6>
-        <p class="speaker-bio show-modal" (click)="showModal(speaker)" [innerHTML]="speaker.description"></p>
-        <a *ngIf="speaker.googleLink" class="icons-sm gplus-ic" href="https://plus.google.com/{{ speaker.googleLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-google-plus" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.facebookLink" class="icons-sm fb-ic" href="https://www.facebook.com/{{ speaker.facebookLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.twitterLink" class="icons-sm tw-ic" href="https://twitter.com/{{ speaker.twitterLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.linkedinLink" class="icons-sm li-ic" href="https://www.linkedin.com/{{ speaker.linkedinLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.githubLink" class="icons-sm git-ic" href="https://github.com/{{ speaker.githubLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.websiteLink" class="icons-sm email-ic" href="{{ speaker.websiteLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-chrome" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!--Section: Volunteers-->
-  <!--Section: Uncategorized-->
-  <section class="section team-section pb-3" *ngIf="(unroled | async)?.length > 0">
-    <hr>
-    <div class="row text-center">
-      <div *ngFor="let speaker of unroled | async" class="col-lg-3 col-md-6 mb-r" style="padding-left: 40px; padding-right: 40px; padding-bottom: 50px; margin: 0 auto;">
-        <div class="avatar show-modal" (click)="showModal(speaker)" title="{{ speaker.name }}" alt="{{ speaker.name }}">
-          <img *ngIf="!speaker.photoURL" class="rounded-circle z-depth-1" style="background-image: url('../../../assets/img/user-default.png')">
-          <img *ngIf="speaker.photoURL" class="rounded-circle z-depth-1" [ngStyle]="{'background-image': 'url(' + speaker.photoURL + ')'}">
-        </div>
-        <button type="button" class="btn btn-sm btn-primary" *ngIf="isAdmin()" routerLink="/speakers/{{ speaker.$key }}/edit">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        </button>
-        <button type="button" class="btn btn-sm btn-danger" *ngIf="isAdmin()" (click)="deleteSpeaker(speaker)">
-          <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-        <h4 class="show-modal" (click)="showModal(speaker)" [innerHTML]="speaker.name"></h4>
-        <h6>
-          <span *ngIf="speaker.title" [innerHTML]="speaker.title"></span>
-          <br/>
-          <strong *ngIf="speaker.company">@
-            <span [innerHTML]="speaker.company"></span>
-          </strong>
-        </h6>
-        <p class="speaker-bio show-modal" (click)="showModal(speaker)" [innerHTML]="speaker.description"></p>
-        <a *ngIf="speaker.googleLink" class="icons-sm gplus-ic" href="https://plus.google.com/{{ speaker.googleLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-google-plus" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.facebookLink" class="icons-sm fb-ic" href="https://www.facebook.com/{{ speaker.facebookLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.twitterLink" class="icons-sm tw-ic" href="https://twitter.com/{{ speaker.twitterLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.linkedinLink" class="icons-sm li-ic" href="https://www.linkedin.com/{{ speaker.linkedinLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.githubLink" class="icons-sm git-ic" href="https://github.com/{{ speaker.githubLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-        <a *ngIf="speaker.websiteLink" class="icons-sm email-ic" href="{{ speaker.websiteLink }}" target="_blank" rel="noopener">
-          <i class="fa fa-chrome" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!--Section: Uncategorized-->
+  <!--Section: Speakers / Mentors / Organizers-->
 </div>
 <div class="between-sections"><br><br></div>
 

@@ -8,7 +8,7 @@ import * as _ from 'lodash';
 export class RolePipe implements PipeTransform {
   transform(value: any, arg: string): any {
     if (arg) {
-        return _.filter(value, d => d.role === arg);
+      return _.filter(value, d => d.role === arg);
     }
 
     return _.filter(value, d => !d.role);
