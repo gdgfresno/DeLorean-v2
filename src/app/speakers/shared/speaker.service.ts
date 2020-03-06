@@ -29,7 +29,7 @@ export class SpeakerService {
   getSpeakerWithRoleList(role: string, query?: object): Observable<Speaker[]> {
     return this.getSpeakerList(query).map<Speaker[], Speaker[]>(
       _speakers => _speakers.filter(
-        speaker => (role ? speaker.role === role : !!!speaker.role)
+        speaker => (role ? speaker.roles.indexOf(role) !== -1 : !!!speaker.roles)
       )
     );
   }
